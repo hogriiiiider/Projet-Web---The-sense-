@@ -1,21 +1,36 @@
-.nav{
-    background: #FFFFFF80;
-
+.nav-container {
+    position: relative;
 }
 
-.nav-image{
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.nav-image {
     float: left;
-    padding-left: 20px ;
+    padding-left: 20px;
 }
 
-.nav-droite a{
+.nav-droite a {
     border-right: 1px solid black;
 }
 
-.CONNECT{
+.CONNECT {
     font-weight: bold;
 }
-.nava{
+
+.nava {
     font-family: Amiko;
     font-size: 20px;
     font-weight: 400;
@@ -27,7 +42,7 @@
     display: flex;
 }
 
-.nava a{
+.nava a {
     padding-right: 20px;
     padding-left: 20px;
     padding-top: 5px;
@@ -36,7 +51,23 @@
     color: #000000;
 }
 
-body{
+.nava a span {
+    text-decoration: none;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(image/DESIGN-DE-FOND.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+body {
     background-image: url(image/DESIGN-DE-FOND.svg);
     background-repeat: no-repeat;
     background-size: cover;
