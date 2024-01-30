@@ -324,11 +324,55 @@ body {
     border-right: 1px solid black;
     padding-bottom: -10%;
     margin-right: 20px;
-    width: 26%;
+    width: 39%;
 }
 
 .les-experience-shangri-title img{
     width: 10%;
     height: auto;
     margin-top: -0.1%;
+}
+
+.les-experience-shangri-texte{
+    font-family: Abel;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    text-align: left;   
+    color: #646363;
+    margin-left: 11%;
+}
+
+.les-experience-shangri{
+    margin-left: 12%;
+    border: 0px solid black;
+    background: #E6E6E6;
+    border-radius: 0px 0px 10px 10px;
+    width: 75%;
+}
+
+.les-experience-reservation-shangri{
+    display: flex;
+}
+
+.les-experience-reservation-shangri img{
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.les-experience-lightroom-shangri{
+    float: right;
+    display: flex;
+}
+
+.les-experience-lightroom-shangri a{
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 275;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: right;
 }
