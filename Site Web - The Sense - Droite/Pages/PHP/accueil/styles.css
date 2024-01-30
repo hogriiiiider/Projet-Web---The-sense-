@@ -14,6 +14,15 @@
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Amiko';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/amiko/v12/WwkQxPq1DFK04uqieV8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 
 .nav-container {
@@ -108,6 +117,26 @@ body {
 
 
 }
+#description{
+    text-decoration: none;
+}
+
+.button_anim {
+    color: #fdfcfc;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #fffdfe;
+    -webkit-transition: ease-out 0.8s;
+    -moz-transition: ease-out 0.8s;
+    -o-transition: ease-out 0.8s;
+    transition: ease-out 0.8s;
+}
+
 .discover-button {
     width: 20vw;
     max-width: 263px;
@@ -123,17 +152,24 @@ body {
     color: white;
     margin: 17% auto;
     display: block;
+    
+}
+
+.discover-button:hover {
+    box-shadow: inset 400px 0 0 0 #ffffff;
+    color: black;
 }
 
 .description{
-    background: rgba(234, 255, 251, 1);
+    background: #EAFFFB;
     display: flex;
 }
 
 .description-button-video{
-    border: 25px solid #bbccc9;
-    width: 60%;
-    height: 500px;
+    width: 2300px;
+    height: 470px;
+    border-radius: 50px;
+    border: 25px solid #90cdc7;
     border-radius: 100% ;
     background-image: url(image/image-42.svg);
     background-size: auto;
@@ -141,6 +177,13 @@ body {
     background-position: center center;
     display: flex;
     margin-top: 5%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.description-video-triangle{
+    margin-left: 45%;
+    margin-top: 30%;
 }
 
 .description-text{
@@ -193,9 +236,15 @@ body {
     color: #3B4040;
     display: block;
     position: absolute;
+    text-decoration: none;
+    margin-top: 50px;
 
 }
 
+.description-text3 a{
+    text-decoration: none;
+    color: #3B4040;
+}
 
 .description-arrow{
     margin-top: 3%;
@@ -205,4 +254,81 @@ body {
     margin-bottom: 40px;
     margin-left: 20px;
     margin-top: 0.5px;
+}
+
+.TheReality{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.TheReality h1{
+    font-family: Amiko;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    display: block;
+    color: #3B4040;
+}
+
+.TheReality p{
+    font-family: Abel;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: left;
+    display: block;
+    color: #3B4040;
+}
+
+.les-experience{
+    
+}
+
+.les-experience h1{
+    font-family: Amiko;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3B4040;
+    margin-left: 11%;
+
+}
+
+.les-experience-image-shangri{
+    text-align: center;
+}
+
+.les-experience img{
+    position: relative;
+    width: 80%;
+    height: auto;
+}
+
+.les-experience-shangri-title{
+    display: flex;
+}
+
+.les-experience-shangri-title h1{
+    font-family: Amiko;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3B4040;
+    border-right: 1px solid black;
+    padding-bottom: -10%;
+    margin-right: 20px;
+    width: 26%;
+}
+
+.les-experience-shangri-title img{
+    width: 10%;
+    height: auto;
+    margin-top: -0.1%;
 }
