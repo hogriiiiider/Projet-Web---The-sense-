@@ -107,15 +107,46 @@ body {
     display: block;
 }
 
-.description h1{
-    font-family: Abel;
-    font-size: 40px;
+.description{
+    background: rgba(234, 255, 251, 1);
+    display: flex;
+}
+
+.description-button-video{
+    border: 25px solid #bbccc9;
+    width: 500px;
+    height: 500px;
+    border-radius: 100% ;
+    background-image: url(image/image-42.svg);
+    background-size: 290%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.description-text{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.description h1 {
+    font-family: Abel, sans-serif;
+    font-size: 2vw;
     font-weight: 400;
     line-height: 51px;
     letter-spacing: 0em;
-    text-align: center;
     color: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     linear-gradient(0deg, #3B4040, #3B4040);
+    margin-right: 20px;
+    margin-left: 10vw;
+    
+    
+}
 
-
+.logo-description {
+    max-width: 200%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-right: 20px;
 }
