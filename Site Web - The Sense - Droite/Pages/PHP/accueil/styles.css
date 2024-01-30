@@ -283,10 +283,6 @@ body {
     color: #3B4040;
 }
 
-.les-experience{
-    
-}
-
 .les-experience h1{
     font-family: Amiko;
     font-size: 30px;
@@ -352,27 +348,46 @@ body {
     width: 75%;
 }
 
-.les-experience-reservation-shangri{
-    display: flex;
-}
-
-.les-experience-reservation-shangri img{
-    width: 10%;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.les-experience-lightroom-shangri{
-    float: right;
-    display: flex;
+.lightroom-shangri{
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 275;
+    line-height: 38px;
+    letter-spacing: 0em;
+    color: #3B4040;
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    margin-top: 50px;
 }
 
 .les-experience-lightroom-shangri a{
-    font-family: Poppins;
-    font-size: 15px;
-    font-weight: 275;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: right;
+    display: flex;
+    text-decoration: none;
+    color: #3B4040;
+    
+}
+
+.les-experience-reservation-shangri{
+    display: flex;
+    justify-content: center;
+}
+
+.les-experience-reservation-shangri img{
+    width: 15%;
+}
+
+.les-experience-lightroom-shangri{
+    width: 100%;
+    display: flex;
+}
+
+.lightroom{
+    width: 100%;
+    justify-content: end;
+}
+
+.lightroom2{
+    width: 15%;
+    margin-left: 1%;
 }
