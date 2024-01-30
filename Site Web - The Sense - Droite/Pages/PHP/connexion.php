@@ -15,11 +15,16 @@ if (isset($_POST['mail']) && isset($_POST['password'])){
     
     $tab = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($tab){
-        echo 'user' ;
-    } else{
+    if(tab){
+        if (password_verify($mdp, $tab['password'])){
+            echo 'user' ;
+        }else{
+            echo 'reset';
+        }
+    }else{
         echo 'reset' ;
     }
+    
 }
 
 ?>
