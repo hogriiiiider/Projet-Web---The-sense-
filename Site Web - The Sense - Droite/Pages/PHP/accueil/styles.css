@@ -180,6 +180,10 @@ body {
 
 }
 
+.description-text3{
+    display: flex;
+}
+
 .description-redirection{
     font-family: Poppins;
     font-size: 25px;
@@ -188,14 +192,17 @@ body {
     letter-spacing: 0em;
     color: #3B4040;
     display: block;
+    position: absolute;
 
 }
-.description-text3{
-    display: flex;
-}
+
 
 .description-arrow{
     margin-top: 3%;
     display: flex;
     margin-bottom: 5px;
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    margin-top: 0.5px;
 }
