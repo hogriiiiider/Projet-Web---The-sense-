@@ -118,7 +118,7 @@ body {
     height: 500px;
     border-radius: 100% ;
     background-image: url(image/image-42.svg);
-    background-size: 290%;
+    background-size: auto;
     background-repeat: no-repeat;
     background-position: center center;
 }
