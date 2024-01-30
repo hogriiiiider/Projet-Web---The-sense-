@@ -10,7 +10,7 @@
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     padding-bottom: 10px;
-    display: flex;
+    display: inline-block;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
@@ -19,7 +19,10 @@
 
 .nav-image {
     float: left;
-    padding-left: 20px;
+    padding-left: 4%;
+    max-width: 100%;
+    height: auto;
+    width: 7%;
 }
 
 .nav-droite a {
@@ -31,15 +34,16 @@
 }
 
 .nava {
-    font-family: Amiko;
-    font-size: 20px;
+    font-family: Amiko, sans-serif;
+    font-size: 1.4vw;
     font-weight: 400;
     line-height: 27px;
-    letter-spacing: -0.125em;
+    letter-spacing: -0.080em;
     text-align: right;
     float: right;
-    padding-top: 10px;
+    padding-top: 15px;
     display: flex;
+    padding-right: 2%;
 }
 
 .nava a {
@@ -71,4 +75,47 @@ body {
     background-image: url(image/DESIGN-DE-FOND.svg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.acroche{
+    font-family: Amiko, sans-serif;
+    
+    font-size: 1vw;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 26%;
+
+
+}
+.discover-button {
+    width: 20vw;
+    max-width: 263px;
+    height: 4vw;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background: #000000;
+    font-family: Amiko, sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 37px;
+    text-align: center;
+    color: white;
+    margin: 17% auto;
+    display: block;
+}
+
+.description h1{
+    font-family: Abel;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    linear-gradient(0deg, #3B4040, #3B4040);
+
+
 }
