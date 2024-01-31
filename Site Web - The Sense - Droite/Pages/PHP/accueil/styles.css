@@ -566,7 +566,6 @@ body {
     font-family: Abel;
     font-size: 1vw;
     font-weight: 400;
-    line-height: 38px;
     letter-spacing: -0.05em;
     text-align: center;
     color: white;
@@ -582,6 +581,27 @@ body {
     text-align: center;
 }
 
+.descente{
+    margin-bottom: 50px;
+}
+
 .planning{
-    width: 100%;
+    background: #000000;
+}
+
+.planning-date{
+    color: white;
+    font-family: Abel;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.planning-date p{
+    margin-left: 5px;
+    margin-right: 5px;
 }
