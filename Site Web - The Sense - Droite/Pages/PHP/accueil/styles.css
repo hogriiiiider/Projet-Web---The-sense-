@@ -1,29 +1,10 @@
-@font-face {
-    font-family: 'Abel';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
-@font-face {
-    font-family: 'Amiko';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/amiko/v12/WwkQxPq1DFK04uqieV8.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Amiko&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
 .nav-container {
     position: relative;
@@ -31,6 +12,7 @@
 
 .nav {
     position: fixed;
+    height: auto;
     top: 0;
     left: 0;
     right: 0;
@@ -43,17 +25,18 @@
     z-index: 1000;
 }
 
-.nav:hover {
-    transform: scaleY(1.1); 
-}
-
-
-.nav-image {
+.nav-image img{
     float: left;
     padding-left: 4%;
     max-width: 100%;
     height: auto;
+    width: 3%;
+    transition: width 3s ease;
+}
+
+.nav-image img:hover{
     width: 7%;
+    height: auto;
 }
 
 .nav-droite a {
@@ -65,7 +48,7 @@
 }
 
 .nava {
-    font-family: Amiko, sans-serif;
+    font-family: Amiko;
     font-size: 1.4vw;
     font-weight: 400;
     line-height: 27px;
@@ -75,6 +58,10 @@
     padding-top: 15px;
     display: flex;
     padding-right: 2%;
+}
+
+.nava a:hover{
+    font-size: 1.8vw;
 }
 
 .nava a {
@@ -105,8 +92,7 @@ body {
 }
 
 .acroche{
-    font-family: Amiko, sans-serif;
-    
+    font-family: Amiko ;
     font-size: 1vw;
     font-weight: 700;
     line-height: 1.2;
@@ -117,11 +103,12 @@ body {
 
 
 }
-#description{
-    text-decoration: none;
+.decouvrir{
+    text-decoration: none
 }
 
 .button_anim {
+    text-decoration: none;
     color: #fdfcfc;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 0px;
@@ -138,13 +125,14 @@ body {
 }
 
 .discover-button {
+    
     width: 20vw;
     max-width: 263px;
     height: 4vw;
     border: 1px solid #000000;
     border-radius: 10px;
     background: #000000;
-    font-family: Amiko, sans-serif;
+    font-family: Amiko;
     font-size: 1.5vw;
     font-weight: 400;
     line-height: 37px;
@@ -163,34 +151,36 @@ body {
 .description{
     background: #EAFFFB;
     display: flex;
+    text-decoration: none;
 }
 
-.description-button-video{
-    width: 2300px;
-    height: 470px;
-    border-radius: 50px;
-    border: 25px solid #90cdc7;
-    border-radius: 100% ;
-    background-image: url(image/image-42.svg);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    display: flex;
-    margin-top: 5%;
-    margin-left: 10%;
-    margin-bottom: 5%;
-}
-
-.description-video-triangle{
-    margin-left: 45%;
-    margin-top: 30%;
-}
+.description-button-video {
+    width: 475px;
+    height: 475px;
+    border: 25px solid #00000033;
+    border-radius: 50%;
+    margin-bottom: 45px;
+    margin-top: 45px;
+    margin-left: 100px;
+    margin-right: 200px;
+    z-index: 10;
+  }
+  
+  
+  .description-video-triangle {
+    width: auto;
+    height: auto;
+    left: 18%;
+    top: 150%;
+    z-index: 10000;
+    
+  }
 
 .description-text{
     display: block;
     margin: auto ;
-    margin-left: 20%;
     margin-right: 10%;
+    margin-top: 15px;
 }
 
 .description-text2 h1 {
@@ -201,6 +191,7 @@ body {
     letter-spacing: 0em;
     color: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     linear-gradient(0deg, #3B4040, #3B4040);
+
     margin-right: 20px;
     display: flex;
     text-align: center;
@@ -231,7 +222,7 @@ body {
     font-family: Poppins;
     font-size: 25px;
     font-weight: 275;
-    line-height: 38px;
+    line-height: 37.5px;
     letter-spacing: 0em;
     color: #3B4040;
     display: block;
@@ -281,10 +272,8 @@ body {
     text-align: left;
     display: block;
     color: #3B4040;
-}
-
-.les-experience{
-    
+    margin-bottom: -10px;
+    margin-top: -10px;
 }
 
 .les-experience h1{
@@ -307,6 +296,8 @@ body {
     position: relative;
     width: 80%;
     height: auto;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -4.5px;
 }
 
 .les-experience-shangri-title{
@@ -325,6 +316,7 @@ body {
     padding-bottom: -10%;
     margin-right: 20px;
     width: 39%;
+    margin-left: 5%;
 }
 
 .les-experience-shangri-title img{
@@ -339,10 +331,13 @@ body {
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 0.03em;
-    text-align: left;   
+    text-align: justify;   
     color: #646363;
-    margin-left: 11%;
+    margin-left: 5%;
+    margin-top: -10px;
+    margin-right: 8%;
 }
+
 
 .les-experience-shangri{
     margin-left: 12%;
@@ -350,29 +345,243 @@ body {
     background: #E6E6E6;
     border-radius: 0px 0px 10px 10px;
     width: 75%;
+    margin-bottom: 3%;
 }
 
-.les-experience-reservation-shangri{
+.les-experience-reservation-shangri {
     display: flex;
-}
-
-.les-experience-reservation-shangri img{
-    width: 10%;
-    justify-content: center;
     align-items: center;
-    
+    justify-content: center;
+    margin-left: 39%;
 }
 
-.les-experience-lightroom-shangri{
-    float: right;
+.les-experience-reservation-shangri img {
+    width: 30%;
+    padding-bottom: 20px;
+    transition: width 1s ease;
+}
+
+.les-experience-reservation-shangri img:hover{
+    width: 35%;
+    height: auto;
+}
+
+.les-experience-reservation-shangri a {
+    display: inline-block;
+    text-decoration: none;
+    color: #9D9D9D;
+    font-family: Poppins ;
+    font-size: 15px;
+    font-weight: 275;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.lightroom {
     display: flex;
+    margin-left: 35%;
 }
 
-.les-experience-lightroom-shangri a{
+.text-lightroom{
+    margin-top: 3%;
     font-family: Poppins;
     font-size: 15px;
     font-weight: 275;
     line-height: 23px;
     letter-spacing: 0em;
     text-align: right;
+
+    
+}
+
+.description-arrow-2 {
+    width: 2vw;
+    height: auto;
+    margin-left: -3%;
+    margin-top: 5%;
+}
+
+.les-experience-conjuring-title{
+    display: flex;
+}
+
+.les-experience-conjuring-title h1{
+    font-family: Amiko;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3B4040;
+    border-right: 1px solid black;
+    padding-bottom: -10%;
+    margin-right: 20px;
+    width: 33%;
+    margin-left: 5%;
+}
+
+.les-experience-conjuring-title img{
+    width: 10%;
+    height: auto;
+    margin-top: -0.1%;
+}
+
+.conjuring{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-align: left;    
+    color: #fd4f4f;
+    margin-top: -2%;
+}
+
+.les-experience-battle-title{
+    display: flex;
+}
+
+.les-experience-battle-title h1{
+    font-family: Amiko;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #3B4040;
+    border-right: 1px solid black;
+    padding-bottom: -10%;
+    margin-right: 20px;
+    width: 20%;
+    margin-left: 5%;
+}
+
+.les-experience-battle-title img{
+    width: 10%;
+    height: auto;
+    margin-top: -0.1%;
+}
+
+
+.reservation-img{
+    display: block;
+    text-align: center;
+    background-image: url(image/image\ 101.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-reserver-style{
+    margin-bottom: -60px;
+    margin-top: 200px;
+}
+
+.reserver-accroche{
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.reservation-fond{
+    width: 100%;
+    margin-top: 100px;
+}
+
+.text-reservation{
+    font-family: Abel;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: white;
+    
+}
+
+.paranthese-reservation{
+    font-family: Abel;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: white;
+    margin-top: -25px;
+}
+
+.nb-personne{
+    display: inline-flex;
+    text-align: left;
+}
+
+.nb-personne img{
+    width: 0.6vw;
+    height: auto;
+}
+
+.nb-personne p{
+    color: white;
+    font-family: Aldrich;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.reservation-prix{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lightroom-prix, .darkroom-prix, .battleroom-prix, .creativeroom-prix{
+    display: inline;
+    justify-content: space-between;
+}
+
+.lightroom-prix{
+    margin-left: 300px;
+}
+
+.creativeroom-prix{
+    margin-right: 300px;
+}
+
+.darkroom-prix img{
+    margin-top: -15px;
+}
+
+.creativeroom-prix img{
+    margin-top: 9px;
+}
+
+.lightroom-prix p, .darkroom-prix p, .battleroom-prix p, .creativeroom-prix p{
+    font-family: Abel;
+    font-size: 1vw;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: white;
+}
+
+.rouge{
+    color: red;
+    font-family: Abel;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-align: center;
+}
+
+.planning{
+    width: 100%;
 }
