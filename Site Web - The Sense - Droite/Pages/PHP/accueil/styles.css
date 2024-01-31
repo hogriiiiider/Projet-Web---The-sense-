@@ -617,8 +617,8 @@ body {
 .mardi, .mercredi, .jeudi, .vendredi, .samedi, .dimanche{
     display: inline;
     justify-content: space-between;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 75px;
+    margin-right: 75px;
 }
 
 .mardi .date, .mercredi .date, .jeudi .date, .vendredi .date, .samedi .date, .dimanche .date{
@@ -643,10 +643,11 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     width: 140px;
-    height: 40px;
+    height: 50px;
     align-items: center;
     justify-content: center;
     display: flex;
+    margin-bottom: -20px;
 }
 
 .mardi p:hover, .mercredi p:hover, .jeudi p:hover, .vendredi p:hover, .samedi p:hover, .dimanche p:hover{
@@ -661,5 +662,94 @@ body {
 }
 
 .disponibilite{
+    margin-top: 40px;
     text-align: center;
+    padding-bottom: 20px;
+}
+
+.news{
+    display: block;
+}
+
+.news h1{
+    font-family: Amiko;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    color: #3B4040;
+    margin-left: 11%;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+.news-part{
+    display: flex;
+    justify-content: center;
+}
+
+.image-1, .image-2{
+    display: block;
+}
+
+.image-1 img, .image-2 img{
+    width: 90%;
+    height: auto;
+    margin-bottom: -3.1vw;
+}
+
+.image-1 img{
+    margin-left: 7%;
+}
+.image-2 img{
+    margin-left: 3%;
+}
+
+.text-image-1, .text-image-2{
+    display: block;
+    background: #E5E5E5;
+    border-radius: 0px 0px 10px 10px;
+    width: 85%;
+    height: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 9.5%;
+}
+
+.text-image-2{
+    margin-left: 5.4%
+}
+
+.text-image-1 h1, .text-image-2 h1{
+    font-family: Amiko;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.03em;
+    text-align: center; 
+    margin-top: 50px;
+}
+
+.text-image-1 p, .text-image-2 p{
+    font-family: Abel;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 27px;
+    text-align: center;
+    color: #777777;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.journaux{
+    font-family: Amiko;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 53px;
+    letter-spacing: -0.03em;
+    text-align: left;    
+    color: #3B4040;
+    margin-left: 7%;
 }
