@@ -144,9 +144,10 @@
 .discover-reserver{
     max-width: 263px;
     text-align: center;
-    margin-bottom: 7%;
-    margin-left: 72%;
+    margin-left: 43%;
     display: block;
+    border: none;
+    background-color: #eafeff;
 }
 
 .dark_room{
@@ -186,6 +187,10 @@
 
 .description{
     background: rgba(234, 255, 251, 1);
+    display: flex;
+}
+
+.description-experience{
     display: flex;
 }
 
@@ -256,6 +261,7 @@
 
 .description-explication{
     font-family: Abel;
+    color: #3B4040;
     font-size: 24px;
     font-weight: 400;
     line-height: 31px;
@@ -280,15 +286,34 @@
     z-index: 50;
 }
 
+.BG_shangri_la{
+    background-color: #eafeff;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 4%;
+    margin-top: -4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 8%;
+    padding-bottom: 2%;
+}
+
 .experience{    
     margin-left: 10%;
     margin-right: 10%;
 }
 
 .experience h3{
-    font-size: xx-large;
+    font: bold;
+    font-size: 40px;
     font-family: Amiko;
     margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#titre{
+    margin-top: 10%;
+    margin-bottom: 3%;
+
 }
 
 .shangri-la{
@@ -304,4 +329,9 @@
     text-align: justify;
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.rectangle_94{
+    width: 99%;
+    padding-top: -5%;
 }
