@@ -19,14 +19,34 @@
                         <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
                         <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
-                    <div class="CONNECT">
-                        <a href="#" >CONNEXION</a>
+                    <div class="CONNECT" >
+                        <a id="CONNECT" href="#" >CONNEXION</a>
+                    </div>
+                </div>
+                <div class="connexion-box">
+                    <h2>Connexion</h2>
+                    <div class="form-group">
+                        <label for="username">Identifiant</label>
+                        <input type="text" id="username" placeholder="Pseudonyme">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="footer">
+                        <div class="account-options">
+                            <a href="#">Créer un compte</a>
+                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
+                        </div>
+                        <button class="connexion-btn"><span>Connexion</span></button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <p class="acroche">QUAND LE VIRTUEL DEVIENT RÉEL</p>
+        <div>
+            <br>
+            <p class="acroche">QUAND LE VIRTUEL DEVIENT RÉEL</p>
+        </div>
         <div decouvrir>
             <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
         </div>
@@ -351,16 +371,17 @@
             <div class="journaux-section">
                 <br>
                 <div class="journaux-arrows">
-                    <img src="image/Cercle 1.svg" alt="flèche précedente" style="margin-right: 1%;">
-                    <img src="image/Cercle 2.svg" alt="flèche suivante">
+                    <img src="image/Cercle 1.svg" alt="flèche précedente" style="margin-right: 1%;" id="previous_arrow">
+                    <img src="image/Cercle 2.svg" alt="flèche suivante" id="next_arrow">
                     <div class="journaux-image">
-                        <img src="image/image 126.svg" alt="logo journal">
+                        <span class="logo-news"><img src="image/image-126.svg" alt="logo journal"></span>
                         <div class="journaux-article">
                             <p>
                                 "C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
                                 de cinéma du week-end"
                             </p>
                         </div>
+                        <span class="rect-news"><img src="image/news-rect-3.svg" alt="page n"></span>
                     </div>
                 </div>
             </div>
@@ -422,5 +443,28 @@
         </div>
 
     </body>
+    <footer>
+        <div class="left">
+            <a>Nous contacter</a>
+            <span><a>Réservations</a></span>
+            <span><a>FAQ</a></span>
+        </div>
+        <div class="center">
+            <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+        </div>
+        <div class="right">
+            <div class="txt">
+                <a>Modalités</a>
+                <span>|</span>
+                <span><a>Politique de confidentialité</a></span>
+            </div>
+            <div class="img">
+                <span><a><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+            </div>
+        </div>
+    </footer>
     <script type="text/javascript" src="script.js"></script>
 </html>
