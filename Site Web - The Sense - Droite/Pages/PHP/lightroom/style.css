@@ -5,7 +5,15 @@
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/abel/v18/MwQ5bhbm2POE2V9BPQ.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
+}
+
+@font-face {
+    font-family: 'Alatsi';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/alatsi/v11/TK3iWkUJAxQ2nLN2FD8Ghe4.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
 
 @font-face {
     font-family: 'Amiko';
@@ -297,10 +305,55 @@ footer{
     width: 100%;
     height: 150px;
     background-color: #3B4040;
+    color: #82FFE1;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .left{
+    width: 20%;
+    text-align: left;
+    margin-top: 3.5%;
+    margin-left: 1%;
+    font-size: 17px;
+
+}
+
+footer .left span{
+    margin-left: 10%
+}
+
+footer .center{
     text-align: center;
+    font-size: 20px;
+    margin-top: 3.5%;
+}
+
+footer .right{
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1%;
+}
+
+footer .right .txt{
+    width: 400px;
+    margin-top: 12%;
+    font-size: 17px;
+}
+
+
+footer .right .img{
+    width: 50%;
+    margin-top: 10.5%;
+}
+
+footer .right span{
+    margin-left: 5%;
 }
 
 footer a{
     font-size: 17px;
-    font-family:Alatsi ;
+    font-family:Alatsi, sans-serif ;
+    
 }
