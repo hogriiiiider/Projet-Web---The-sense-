@@ -780,6 +780,7 @@ body {
     align-items: center;
     margin-right: 10%;
     margin-left: 10%;
+    margin-bottom: 5%;
 }
 
 .journaux-article p{
@@ -803,6 +804,7 @@ footer{
 
 .footer-text{
     display: flex;
+    color: #82FFE1;
 }
 .footer-text a{
     font-family: Abel;
@@ -810,10 +812,27 @@ footer{
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 0em;
-    text-align: left;   
-    color: #82FFE1; 
+    text-align: left;    
     padding-left: 3%;
     margin-right: 2%;
     margin-top: 2%;
     margin-bottom: 2%;
+
+}
+
+.footer-text-center{
+    display: inline;
+    text-align: center; 
+}
+
+.footer-text-center p{
+    font-family: Abel;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: center;
 }
