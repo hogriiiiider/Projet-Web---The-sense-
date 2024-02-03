@@ -714,30 +714,37 @@ body {
     margin-right: 15px;
 }
 
-.day{
+/* PLANNING JS */
+
+.day {
     display: flex;
-    justify-content: space-between;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
 
-.mardi, .mercredi, .jeudi, .vendredi, .samedi, .dimanche{
+.column {
     display: inline;
-    justify-content: space-between;
-    margin-left: 75px;
-    margin-right: 75px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: auto;
+    text-align: center;
+    margin: auto;
 }
 
-.mardi .date, .mercredi .date, .jeudi .date, .vendredi .date, .samedi .date, .dimanche .date{
+.column .date {
     font-family: Amiko;
     font-size: 25px;
     font-weight: 700;
     line-height: 22px;
     letter-spacing: -0.085em;
     text-align: center;
-    color: #B10000;    
-    margin-bottom: 50px;
+    color: #B10000
+
 }
 
-.mardi p, .mercredi p, .jeudi p, .vendredi p, .samedi p, .dimanche p{
+.column p {
     font-family: Abel;
     font-size: 30px;
     font-weight: 400;
@@ -747,16 +754,16 @@ body {
     color: white;   
     border: 1px solid black;
     border-radius: 10px;
-    width: 140px;
+    width: auto;
     height: 50px;
     align-items: center;
     justify-content: center;
     display: flex;
     margin-bottom: -20px;
-    margin-right: -20%;
+    margin-right: auto;
 }
 
-.mardi p:hover, .mercredi p:hover, .jeudi p:hover, .vendredi p:hover, .samedi p:hover, .dimanche p:hover{
+.column p:hover {
     border: 1px solid white;
 }
 
@@ -764,10 +771,9 @@ body {
     height: auto;
     width: 1px;
     background-color: white;
-    margin-top: 50px;
-    margin-left: -5%;
-    margin-right: -10%;
 }
+
+/* PLANNING JS */
 
 .disponibilite{
     margin-top: 40px;
@@ -868,104 +874,72 @@ body {
     display: block;
     padding-bottom: 3%;
     padding-top: 3%;
-    overflow: hidden;
 }
 
 .arrows {
   display: flex;
   width: 100%;
-  margin-bottom: 20px;
-  margin-left: 4%;
-}
-
-.arrows span {
-  font-size: 36px;
+  margin-bottom: 4%;
+  margin-left: 6%;
   cursor: pointer;
 }
 
-.arrows span:hover {
-  opacity: 0.5;
+.arrows img{
+    margin-right: 25px;
+    transition: 0.3s all ease-in-out;
 }
 
-.logo-news {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: auto;
+.arrows img:hover {
+  transform: scale(1.1);
+}
+
+
+.slider-content{
+    width: 800px;
     height: auto;
-    margin: auto;
-}
-
-.news-content{
     display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    text-align: center;
+    margin: 25px auto;
 }
 
-.news-content p{
+.slider-content-item{
+    display: block;
+    min-width: 100%;
+    height: 100%;
+}
+
+.slider-content-item img{
+    width: 30%;
+    height: 100%;
+}
+
+.slider-content-item p{
+    width: 100%;
+    height: 100%;
     font-family: Abel;
     font-size: 35px;
     font-weight: 400;
     line-height: 45px;
     letter-spacing: 0em;
-    text-align: center; 
-    width: 50%;  
+    text-align: center;   
+    color: #646363;
+ 
 }
 
-.news-content img{
-    justify-content: center;
-}
-
-.logo-text-container{
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    margin-right: 50%;
-    animation: slide 60s infinite ease-in-out;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    14.28% { transform: translateX(0); }
-    16.66% { transform: translateX(-154%); }
-    28.56% { transform: translateX(-154%); }
-    33.33% { transform: translateX(-264%); }
-    47.09% { transform: translateX(-264%); }
-    50% { transform: translateX(-457.5%); }
-    61.9% { transform: translateX(-457.5%); }
-    66.66% { transform: translateX(-528%); }
-    80.42% { transform: translateX(-528%); }
-    83.33% { transform: translateX(-761.5%); }
-    95.23% { transform: translateX(-761.5%); }
-    100% { transform: translateX(0); }
-}
-
-.logo-text-container img{
-    width: auto;
-    height: 60px;
-    margin-left: -25%;
-}
-
-.logo-text-container p{
-    margin-left: 13%;
-}
-
-.rect-news-container {
+.rect-container {
   display: flex;
+  text-align: center;
   justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
-.rect-news {
+.rect-news, .rect-news2, .rect-news3, .rect-news4, .rect-news5, .rect-news6 {
     margin-right: 30px;
     width: 40px;
     height: 3px;
     background: #C4C4C4;
-    transition: background 1s ease-in-out;
-}
-
-.rect-news.active {
-  background: #1BDCC5;
-  transition: background 1.5s ease-in-out;
 }
 
 .faq-container {
