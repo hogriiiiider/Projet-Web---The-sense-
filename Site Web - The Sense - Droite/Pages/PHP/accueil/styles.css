@@ -205,11 +205,10 @@ body {
     text-align: center;
     color: rgba(0, 0, 0, 1);
     margin-top: 26%;
-
-
 }
-.decouvrir{
-    text-decoration: none
+
+.decouvrir {
+    text-decoration: none;
 }
 
 .button_anim {
@@ -230,63 +229,82 @@ body {
 }
 
 .discover-button {
-    
-    width: 20vw;
+    width: 80%;
     max-width: 263px;
-    height: 4vw;
+    height: 4em;
     border: 1px solid #000000;
     border-radius: 10px;
     background: #000000;
     font-family: Amiko;
-    font-size: 1.5vw;
+    font-size: 1.5em;
     font-weight: 400;
     line-height: 37px;
     text-align: center;
     color: white;
     margin: 17% auto;
     display: block;
-    
+    text-decoration: none;
 }
 
 .discover-button:hover {
     box-shadow: inset 400px 0 0 0 #ffffff;
     color: black;
+    text-decoration: none;
 }
-
-.description{
+.description {
     background: #EAFFFB;
     display: flex;
     text-decoration: none;
+    position: relative;
 }
 
 .description-button-video {
     width: 475px;
     height: 475px;
-    border: 25px solid #00000033;
     border-radius: 50%;
-    margin-bottom: 45px;
-    margin-top: 45px;
-    margin-left: 100px;
-    margin-right: 200px;
+    margin: 45px 200px 45px 100px;
     z-index: 10;
-  }
-  
-  
-  .description-video-triangle {
-    width: auto;
-    height: auto;
-    margin-left: -26%;
-    top: 150%;
-    z-index: 10000;
-    
-  }
+    transition: all 1s ease-in-out;
+}
 
-.description-text{
-    display: block;
-    margin: auto ;
-    margin-right: 10%;
-    margin-top: 15px;
-    margin-left: 20%;
+.description-button-video:hover{
+    transform: scale(1.2);
+}
+
+.overlay-video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.close-video {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+}
+
+.description-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
 }
 
 .description-text2 h1 {
@@ -299,58 +317,66 @@ body {
     linear-gradient(0deg, #3B4040, #3B4040);
 
     margin-right: 20px;
-    display: flex;
     text-align: center;
 }
 
 .logo-description {
-    max-width: 200%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 10px;
     margin-right: 20px;
     margin-left: 20px;
 }
 
-.description-explication{
+.description-explication {
     font-family: Abel;
     font-size: 24px;
     font-weight: 400;
     line-height: 31px;
     letter-spacing: 0em;
-
 }
 
-.description-text3{
+.description-text3 {
     display: flex;
+    margin-top: 15px;
 }
 
-.description-redirection{
+.description-redirection {
     font-family: Poppins;
     font-size: 25px;
     font-weight: 275;
     line-height: 37.5px;
     letter-spacing: 0em;
     color: #3B4040;
-    display: block;
-    position: absolute;
-    text-decoration: none;
-    margin-top: 50px;
-
+    margin-top: 10px;
 }
 
-.description-text3 a{
+.description-text3 a {
     text-decoration: none;
     color: #3B4040;
 }
 
-.description-arrow{
+.description-arrow {
     margin-top: 3%;
     display: flex;
     margin-bottom: 5px;
-    position: relative;
-    margin-bottom: 40px;
     margin-left: 20px;
     margin-top: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+    .description {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description-button-video {
+        margin: 45px auto;
+    }
+
+    .description-text {
+        text-align: center;
+    }
 }
 
 .TheReality{
@@ -822,8 +848,8 @@ body {
     border-radius: 0px 0px 10px 10px;
     padding: 10px;
     text-align: center;
-    margin: 0 auto; /* Centrer horizontalement avec la marge automatique */
-    max-width: 90%; /* Définir la largeur maximale pour .text */
+    margin: 0 auto;
+    max-width: 90%;
 }
 
 .news-item h2 {

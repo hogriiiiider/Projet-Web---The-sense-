@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function openVideo() {
+    document.getElementById("overlayVideo").style.display = "flex";
+}
+
+function closeVideo() {
+    document.getElementById("overlayVideo").style.display = "none";
+}
+
 function less() {
     // Retrieve the current value
     const nbPeopleElement = document.querySelector('.number-people');
