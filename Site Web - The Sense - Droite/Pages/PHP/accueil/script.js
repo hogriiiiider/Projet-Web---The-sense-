@@ -14,10 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function less() {
     // Retrieve the current value
-    const nbPeople = document.querySelector('.number-people');
-    let currentNbPeople = parseInt(nbPeople.textContent);
+    const nbPeopleElement = document.querySelector('.number-people');
+    let currentNbPeople = parseInt(nbPeopleElement.textContent);
     currentNbPeople = Math.max(currentNbPeople - 1, 1);
-    nbPeople.textContent = currentNbPeople;
+    nbPeopleElement.textContent = currentNbPeople;
+
+    // Calculate the new price for elements with class "room-price"
+    updateRoomPrice('.room-price', currentNbPeople, false);
+
+    // Calculate the new price for elements with class "room-price-2"
+    updateRoomPrice('.room-price-2', currentNbPeople, false);
 }
 
 function add() {
@@ -27,21 +33,35 @@ function add() {
     nbPeopleElement.textContent = currentNbPeople;
 
     // Calculate the new price for elements with class "room-price"
-    updateRoomPrice('.room-price', currentNbPeople);
+    updateRoomPrice('.room-price', currentNbPeople, true);
 
     // Calculate the new price for elements with class "room-price-2"
-    updateRoomPrice('.room-price-2', currentNbPeople);
+    updateRoomPrice('.room-price-2', currentNbPeople, true);
 }
 
-function updateRoomPrice(className, currentNbPeople) {
+function updateRoomPrice(className, currentNbPeople, isAddOperation) {
     // Assuming the initial room price is stored in the data attribute "data-initial-price"
     const initialPrices = document.querySelectorAll(className);
     initialPrices.forEach((priceElement) => {
         const initialPrice = parseFloat(priceElement.dataset.initialPrice);
-        const newPrice = (initialPrice / currentNbPeople) + 15;
-        priceElement.textContent = newPrice.toFixed(2); // Assuming you want to display the price with two decimal places
+        let newPrice;
+
+        if (isAddOperation) {
+            // If it's an "add" operation, use the original formula
+            newPrice = (initialPrice / currentNbPeople) + 15;
+        } else {
+            if (currentNbPeople >= 2){
+                newPrice = (initialPrice / currentNbPeople) + 15;
+            } else {
+                newPrice = (initialPrice / currentNbPeople)
+            }
+        }
+
+        priceElement.textContent = newPrice.toFixed(2);
     });
 }
+
+
 
 // PLANNING
 document.addEventListener('DOMContentLoaded', function () {
