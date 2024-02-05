@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>The Sense</title>
         <link rel="stylesheet" href="styles.css">
@@ -47,16 +47,14 @@
             <br>
             <p class="acroche">QUAND LE VIRTUEL DEVIENT RÉEL</p>
         </div>
-        <div decouvrir>
+        <div>
             <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
         </div>
         <div class="description" id="description">
-            <img class="description-button-video" src="image/image 42trailer_home.svg" alt="image pour la video">
-            <img class="description-video-triangle" src="image/Polygon 3.svg" alt="triangle pour la video">
+            <img class="description-button-video" src="image/VIDEO.svg" alt="image pour la video" onclick="openVideo()">
             <div class="description-text">
                 <div class="description-text2">
                     <h1>QU'EST CE QUE <img class="logo-description" src="image/SENSE.svg" alt="logo secondaire the sense"> ?</h1>
-
                 </div>
                 <div class="description-explication">
                     <p>
@@ -77,6 +75,13 @@
                 </div>
             </div>
         </div>
+        <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
+            <div class="video-container">
+                <span class="close-video" onclick="closeVideo()">&times;</span>
+                <iframe width="100%" height="100%" src="video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <div class="TheReality">
             <h1>LA RÉALITÉ À PORTÉE DE MAINS</h1>
             <p>Vous rêvez de voyager, de frissoner ou tout simplement de vivre une expérience unique ? Explorez nos univers entre amis ou en famille et franchissez la frontière de la réalité. Plusieurs dimensions s’offrent à vous, vous donnant accès à de nombreuses expériences. </p>
@@ -196,224 +201,137 @@
                     <p>(max 8 joueurs)</p>
                 </div>
                 <div class="nb-personne">
-                    <img src="image/Rectangle 193.svg" alt="moins">
+                    <img src="image/Rectangle 193.svg" alt="moins" onclick="less()">
                     <p>
-                        <span>1</span>
+                        <span class="number-people">1</span>
                     </p>
-                    <img src="image/Union (1).svg" alt="plus">
+                    <img src="image/Union (1).svg" alt="plus" onclick="add()">
                 </div>
                 <div class="reservation-prix">
                     <div class="lightroom-prix">
                         <img src="image/LIGHT ROOM-logo.svg" alt="LIGHT ROOM">
                         <p>
-                            DE 10H À 18H : <span>50</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 10H À 18H : <span class="room-price" data-initial-price="50">50</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                         <p>
-                            DE 18H À 21H : <span>65</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 18H À 21H : <span class="room-price-2" data-initial-price="65">65</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                     </div>
                     <div class="darkroom-prix">
                         <img src="image/DARK ROOM-logo.svg" alt="DARK ROOM">
                         <p>
-                            DE 10H À 18H : <span>50</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 10H À 18H : <span class="room-price" data-initial-price="50">50</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                         <p>
-                            DE 18H À 21H : <span>65</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 18H À 21H : <span class="room-price-2" data-initial-price="65">65</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                     </div>
                     <div class="battleroom-prix">
                         <img src="image/BATTLE-ROOM.svg" alt="BATTLE ROOM">
                         <p>
-                            DE 10H À 18H : <span>50</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 10H À 18H : <span class="room-price" data-initial-price="50">50</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                         <p>
-                            DE 18H À 21H : <span>65</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 18H À 21H : <span class="room-price-2" data-initial-price="65">65</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                     </div>
                     <div class="creativeroom-prix">
                         <img src="image/CREATIVE-logo.svg" alt="CREATIVE-logo">
                         <p>
-                            DE 10H À 18H : <span>50</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 10H À 18H : <span class="room-price" data-initial-price="50">50</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                         <p class="descente">
-                            DE 18H À 21H : <span>65</span>€ /<span class="rouge">PERSONNE</span> 
+                            DE 18H À 21H : <span class="room-price-2" data-initial-price="65">65</span>€ /<span class="rouge">PERSONNE</span> 
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
+
         <div class="planning">
-            <div class="planning-date">
-                <img src="image/Layer 2.svg" alt="flèche mois précedent">
+            <div class="planning-date" id="week-range">
+                <img src="image/Layer 2.svg" alt="flèche mois précedent" id="prev-week">
                 <p>
-                    DU <span>15</span> AU <span>20</span> <span>DÉCEMBRE</span>
+                    DU <span id="start-day">15</span> AU <span id="end-day">20</span> <span id="end-month">DÉCEMBRE</span>
                 </p>
-                <img src="image/Layer 3.svg" alt="flèche mois suivant">
-            </div>
-            <div class="day">
-                <div class="mardi">
-                    <a class="date">Mardi <br> <span>15</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>-</p>
-                    <p>-</p>
-                </div><div class="separator"></div>
-                <div class="mercredi">
-                    <a class="date">Mercredi<br> <span>16</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>-</p>
-                    <p>-</p>
-                </div><div class="separator"></div>
-                <div class="jeudi">
-                    <a class="date">Jeudi<br> <span>17</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>-</p>
-                    <p>-</p>
-                </div><div class="separator"></div>
-                <div class="vendredi">
-                    <a class="date">Vendredi<br> <span>18</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>22h20</p>
-                    <p>23h50</p>
-                </div><div class="separator"></div>
-                <div class="samedi">
-                    <a class="date">Samedi<br> <span>19</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>22h20</p>
-                    <p>23h50</p>
-                </div><div class="separator"></div>
-                <div class="dimanche">
-                    <a class="date">Dimanche<br> <span>20</span> <span>Déc</span>.</a>
-                    <p>10h20</p>
-                    <p>11h50</p>
-                    <p>13h20</p>
-                    <p>14h50</p>
-                    <p>16h20</p>
-                    <p>17h50</p>
-                    <p>19h20</p>
-                    <p>20h50</p>
-                    <p>-</p>
-                    <p>-</p>
-                </div>
-            </div>
+                <img src="image/Layer 3.svg" alt="flèche mois suivant" id="next-week">
+            </div> 
+
+            <div class="day" id="days-container"></div>
+
             <div class="disponibilite">
                 <img src="image/LÉGENDE.svg" alt="disponibilité">
             </div>
         </div>
+
         <div class="news">
             <h1>LES NEWS DU MOIS</h1>
             <div class="news-part">
-                <div class="image-1">
+                <div class="news-item">
                     <img src="image/image 135.svg" alt="-image-news-1">
-                    <div class="text-image-1">
-                        <br>
-                        <h1>ÉVÉNEMENT : LA CHASSE À L’OEUF</h1>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <br>
+                    <div class="text">
+                        <h2>ÉVÉNEMENT : LA CHASSE À L’OEUF</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
-                <div class="image-2">
+                <div class="news-item">
                     <img src="image/image 138.svg" alt="image-news-2">
-                    <div class="text-image-2">
-                        <br>
-                        <h1>UN NOUVEL ÉQUIPEMENT ARRIVE !</h1>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
-                        </div>
-                        <br>
+                    <div class="text">
+                        <h2>UN NOUVEL ÉQUIPEMENT ARRIVE !</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div class="journaux">
             <h1>QU’EST CE QUI VOUS RETIENT ?</h1>
             <div class="journaux-section">
                 <div class="arrows">
-                    <span id="previous_arrow"><img src="image/Cercle 1.svg" alt="flèche précedante"></span>
-                    <span id="next_arrow"><img src="image/Cercle 2.svg" alt="flèche suivante"></span>
+                    <img onclick="previous()" src="image/Cercle 1.svg" alt="flèche précedante">
+                    <img onclick="next()" src="image/Cercle 2.svg" alt="flèche suivante">
                 </div>
-                <div class="logo-news">
-                    <div class="news-content" id="news-content">
-                        <div class="logo-text-container">
-                            <img src="image/image-126.svg" alt="logo journal">
-                            <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
-                              de cinéma du week-end"</p>
-                        </div>
-                        <div class="logo-text-container">
-                            <img src="image/image-125.svg" alt="logo journal">
-                            <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
-                              Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
-                        </div>
-                        <div class="logo-text-container">
-                            <img src="image/image-126.svg" alt="logo journal">
-                            <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
-                              de cinéma du week-end"</p>
-                        </div>
-                        <div class="logo-text-container">
-                            <img src="image/image-125.svg" alt="logo journal">
-                            <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
-                              Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
-                        </div>
-                        <div class="logo-text-container">
-                            <img src="image/image-126.svg" alt="logo journal">
-                            <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
-                              de cinéma du week-end"</p>
-                        </div>
-                        <div class="logo-text-container">
-                            <img src="image/image-125.svg" alt="logo journal" style="margin-left: -25%;">
-                            <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
-                              Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
-                        </div>
+                <div class="slider-content">
+                    <div class="slider-content-item">
+                        <img src="image/image-126.svg" alt="logo journal">
+                        <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
+                            de cinéma du week-end"</p>
                     </div>
-                    <div class="rect-news-container">
-                        <div class="rect-news"></div>
-                        <div class="rect-news"></div>
-                        <div class="rect-news"></div>
-                        <div class="rect-news"></div>
-                        <div class="rect-news"></div>
-                        <div class="rect-news"></div>
+                    <div class="slider-content-item">
+                        <img src="image/image-125.svg" alt="logo journal">
+                        <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
+                            Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
                     </div>
+                    <div class="slider-content-item">
+                        <img src="image/image-126.svg" alt="logo journal">
+                        <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
+                            de cinéma du week-end"</p>
+                    </div>
+                    <div class="slider-content-item">
+                        <img src="image/image-125.svg" alt="logo journal">
+                        <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
+                            Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
+                    </div>
+                    <div class="slider-content-item">
+                        <img src="image/image-126.svg" alt="logo journal">
+                        <p>"C’est la meilleure manière de faire découvrir l’expérience VR à vos enfants et vos grand-parents mais aussi de changer des perpétuels bowlings ou séance
+                            de cinéma du week-end"</p>
+                    </div>
+                    <div class="slider-content-item">
+                        <img src="image/image-125.svg" alt="logo journal">
+                        <p>"Bluffé par la qualité du service, que ce soit l’accueil et la prise en charge du groupe.
+                            Quant à l’expérience, rien à dire, c’est une expérience unique au monde” </p>
+                    </div>
+                </div>
+                <div class="rect-container">
+                    <div class="rect-news"></div>
+                    <div class="rect-news2"></div>
+                    <div class="rect-news3"></div>
+                    <div class="rect-news4"></div>
+                    <div class="rect-news5"></div>
+                    <div class="rect-news6"></div>
                 </div>
             </div>
         </div>
