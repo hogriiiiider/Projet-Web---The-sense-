@@ -43,20 +43,23 @@
             </div>
         </div>
     </div>
-    <div>
-        <div class="logo_room">
-            <span><img class="dark_room" src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="Logo_Dark_Room"></span>
-            <span><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Battle_Room"></span>
-            <img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE (1).svg" alt="Logo_Creative_Room">
-        </div>
-        
-        <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
-        <button class="discover-button"> Découvrir </button>
+
+    <div class="logo_room">
+        <span><img class="dark_room" src="image/DARK ROOM (2).svg" alt="Logo_Dark_Room"></span>
+        <span><img class="battle_room" src="image/BATTLE RROM.svg" alt="Logo_Battle_Room"></span>
+        <img class="creative_room" src="image/CREATIVE (1).svg" alt="Logo_Creative_Room">
     </div>
 
+    <div class="logo-lightroom">
+        <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
+    </div>
 
-    <div class="description">
-        <button class="description-button-video"><img class="description-video-triangle" src="../../../Assets/Images/Picture/Polygon 3.svg"></button>
+    <div>
+        <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
+    </div>
+
+    <div class="description" id="description">
+        <img class="description-button-video" src="image/VIDEO.svg" alt="image pour la video" onclick="openVideo()">
         <div class="description-text">
             <div class="description-text2">
                 <h1>QU'EST CE QUE <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM mini.svg" alt="logo secondaire the sense"> ?</h1>
@@ -71,6 +74,12 @@
                     Vos émotions n’attendent que vous !
                 </p>
             </div>
+        </div>
+    </div>
+    <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
+        <div class="video-container">
+            <span class="close-video" onclick="closeVideo()">&times;</span>
+            <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -106,9 +115,9 @@
             <span><a>Réservations</a></span>
             <span><a>FAQ</a></span>
         </div>
-        <div class="center">
+        <!-- <div class="center">
             <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
-        </div>
+        </div> -->
         <div class="right">
             <div class="txt">
                 <a>Modalités</a>
@@ -123,6 +132,7 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript" src="script.js"></script>
     
 </body>
 
