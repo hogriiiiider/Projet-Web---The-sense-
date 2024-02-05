@@ -1,42 +1,169 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Room</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="nav-container">
-        <div class="nav">
-            <div class="nav-image">
-                <a><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /></a>
-            </div>
-            <div class="nava">
-                <div class="nav-droite">
-                    <a href="#">NEWS</a>
-                    <a href="#">NOS EXPÉRIENCES</a>
-                    <a href="#">À PROPOS DE NOUS</a>
-                    <a href="#">NOS ÉQUIPEMENTS</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creative Room</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="nav-container">
+            <div class="nav">
+                <div class="nav-image">
+                    <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" />
                 </div>
-                <div class="CONNECT">
-                    <a href="#" >CONNEXION</a>
+                <div class="nava">
+                    <div class="nav-droite">
+                        <a href="../news/news.html">NEWS</a>
+                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
+                    </div>
+                    <div class="CONNECT" >
+                        <a id="CONNECT" href="#" >CONNEXION</a>
+                    </div>
+                </div>
+                <div class="connexion-box">
+                    <h2>Connexion</h2>
+                    <div class="form-group">
+                        <label for="username">Identifiant</label>
+                        <input type="text" id="username" placeholder="Pseudonyme">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="footer">
+                        <div class="account-options">
+                            <a href="#">Créer un compte</a>
+                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
+                        </div>
+                        <button class="connexion-btn"><span>Connexion</span></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="logos_room">
-        <a><img src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="logo Creative Room"></a>
-        <a><img src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="logo Creative Room"></a>
-        <a><img src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="logo Creative Room"></a>
-    </div>
-
-    <a><img class="logo_creative" src="../../../Assets/Images/Icones/CREATIVE (1).svg" alt="logo Creative Room"></a>
-    <button class="discover-button">DÉCOUVRIR</button>
-    <div class="description">
-        <div class="description-text">
+        <div>   
+            <div class="logo_room">
+                <span><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_LIGHT_Room"></span>
+                <span><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></span>
+                <img class="creative_room" src="image/LITTLE-BATTLE-ROOM (1).svg" alt="Logo_BATTLE_Room">
+            </div> 
+            <div class="logo-lightroom"> 
+                <img class="logo_creative" src="image/CREATIVE (1).svg" alt="logo Creative Room">
+            </div> 
+        <div>
+            <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
         </div>
-    </div>
-</body>
+
+        <div class="description">
+            <div class="description-text">
+            </div>
+        </div>
+
+        <div class="description" id="description">
+            <img class="description-button-video" src="image/IMAGE-VIDEO-CREATIVE.svg" alt="image pour la video" onclick="openVideo()">
+            <div class="description-text">
+                <div class="description-text2">
+                    <h1>QU'EST CE QUE <img class="logo-description" src="image/CREATIVE-293x35.svg" alt="logo secondaire the sense"> ?</h1>
+                </div>
+                <div class="description-explication">
+                    <p>
+                        Notre catalogue ne vous suffit pas ? Vous aimeriez laisser parler votre imagination ? Grâce à la CREATIVE ROOM, concept inédit en France, la créativité est votre seule limite, créez de toute pièce l'univers dans lequel vous voyagerez par la suite. Que ce soit dans la jungle ou en haut de montagnes enneigées, pour affronter des démons ou enquêter sur la disparition de bébés licornes roses fluos, le choix vous appartient. Alors tester votre imagination dans la CREATIVE ROOM et entraîner vos amis ou votre famille dans votre univers.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
+            <div class="video-container">
+                <span class="close-video" onclick="closeVideo()">&times;</span>
+                <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="TheReality">
+            <h1>VOTRE EXPÉRIENCE ENTRE VOS MAINS</h1>
+            <p>Suivez les étapes pour créer votre propre aventure. Nous mettons à votre disposition la possibilité de choisir tous les éléments
+               de votre room dans le but de vous offrir l’expérience ultime qui VOUS correspond. Basculez entre chaque étape, modifier vos choix à tout moment pour que ceux-ci correspondent à vos besoins.</p>
+        </div>
+
+        <div class="CREAT-IMAGE-ROOM">
+            <div>
+                <img src="image/CREAT-DARK.svg" alt="dark room">
+            </div>
+
+            <div class="choice-n1">
+                <div class="darkroom-choice">
+                    <img src="image/DARK ROOM.jpg" alt="darkroom-choice">
+                    <p id="e1">ESCAPE GAME</p>
+                    <p id="e2">BATTLE</p>
+                    <p id="e3">SURVIVAL</p>
+                </div>
+            </div>
+            <div class="choice-n2">
+                <div class="darkroom-choice-2">
+                    <img src="image/DARK ROOM (1).jpg" alt="darkroom-choice-2">
+                    <p id="f1">CIMETIÈRE</p>
+                    <p id="f2">MAISON</p>
+                    <p id="f3">ÉCOLE</p>
+                    <span class="choice-1st">- </span>
+                    <span class="modify-1st">(modified)</span>
+                </div>
+            </div>
+            <div class="choice-n3">
+                <div class="darkroom-choice-3">
+                    <img src="image/DARK ROOM (2).jpg" alt="darkroom-choice-3">
+                    <p id="g1">FLIPETTE</p>
+                    <p id="g2">DARK ROOM</p>
+                    <p id="g3">FOU FURIEUX</p>
+                    <span class="choice-1st">- </span>
+                    <span class="modify-1st">(modified)</span>
+                    <span class="choice-2nd">- MAISON</span>
+                    <span class="modify-2nd">(modified)</span>
+                </div>
+            </div>
+
+            <div>
+                <img src="image/CREAT-LIGHT.png" alt="light room">
+            </div>
+            <div>
+                <img src="image/CREAT-BATTLE.svg" alt="battle room">
+            </div>
+        </div>
+
+        <div class="TheReality">
+            <h1>OU CONFIEZ VOTRE DESTIN AU HASARD</h1>
+            <p>Vous pensez pouvoir tout affronter sans problème, laisser le hasard décider de votre room et choisissez simplement la
+                difficulté. </p>
+        </div>
+
+        <div class="CREAT-IMAGE-ROOM">
+            <img src="image/CREAT-ALEATOIRE.svg" alt="aleatoire">
+        </div>
+
+    </body>
+    <footer>
+        <div class="left">
+            <a>Nous contacter</a>
+            <span><a>Réservations</a></span>
+            <span><a>FAQ</a></span>
+        </div>
+        <div class="center">
+            <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+        </div>
+        <div class="right">
+            <div class="txt">
+                <a>Modalités</a>
+                <span>|</span>
+                <span><a>Politique de confidentialité</a></span>
+            </div>
+            <div class="img">
+                <span><a><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="script.js"></script>
 </html>
