@@ -286,8 +286,10 @@ body {
 
 .video-container {
     position: relative;
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 50%;
+    height: 50%;
+    max-height: auto;
     margin: 0 auto;
 }
 
