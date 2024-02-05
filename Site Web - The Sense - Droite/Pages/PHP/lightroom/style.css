@@ -220,11 +220,26 @@
 
 .description-experience{
     display: flex;
+    background: url("../../../Assets/Images/Design/Vector 80.svg");
 }
 
 .layout_2{
     position: absolute;
     z-index: 5;
+}
+
+.bg_achat{
+    display: block;
+    text-align: center;
+    background: url("../../../Assets/Images/Picture/image\ 45.svg");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 25%;
+    width: 100%;
+    padding-bottom: 4%;
 }
 
 .BG_shangri_la{
@@ -367,14 +382,15 @@
 }
 
 .bg_reservation_2 {
+    padding-top: 4%;
     font-family: Abel;
     font-size: 25px;
     width: 100%;
     background-color: #000000;
     color: white;
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 25%;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .color_info{
@@ -443,3 +459,15 @@ footer a{
     text-decoration: none;
     color: #82FFE1;
 }
+
+.phrase_de_validation{
+    font-family: Abel;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-right: 25%;
+    z-index: 1000;
+    color: white;
+}
+
