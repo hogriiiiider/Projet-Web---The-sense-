@@ -1,154 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Light Room</title>
-</head>
-<body>
-    
-<div> <img class="BG" src="../../../Assets/Images/Design/Vector 78 (2).svg"></div>
-    <div class="layout_1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Light Room</title>
+    </head>
+    <body>
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <a><img src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /></a>
+                    <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" />
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
-                        <a href="#">NEWS</a>
-                        <a href="#">NOS EXPÉRIENCES</a>
-                        <a href="#">À PROPOS DE NOUS</a>
-                        <a href="#">NOS ÉQUIPEMENTS</a>
+                        <a href="../news/news.html">NEWS</a>
+                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
-                    <div class="CONNECT">
-                        <a href="#" >CONNEXION</a>
+                    <div class="CONNECT" >
+                        <a id="CONNECT" href="#" >CONNEXION</a>
                     </div>
-                </div>  
-            </div>
-        </div>
-        <div class="logo_room">
-            <span><img class="dark_room" src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="Logo_Dark_Room"></span>
-            <span><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Battle_Room"></span>
-            <img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE (1).svg" alt="Logo_Creative_Room">
-        </div>
-        
-        <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
-        <button class="discover-button"> Découvrir </button>
-    </div>
-
-    <div class="description">
-        <button class="description-button-video"><img class="description-video-triangle" src="../../../Assets/Images/Picture/Polygon 3.svg"></button>
-        <div class="description-text">
-            <div class="description-text2">
-                <h1>QU'EST CE QUE <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM mini.svg" alt="logo secondaire the sense"> ?</h1>
-            </div>
-            <div class="description-explication">
-                <p>
-                    Voyagez, explorez, découvrez LIGHT ROOM ! 
-                    Découvrez des paysages somptueux et des histoires palpipante dans cette salle accessible pour toute la famille. 
-                    Ici tout n’est qu’affaire d’émotions et de beauté, 
-                    explorer les décors de nos expériences et partez à l’aventure en famille ou entre amis à partir de 12 ans. 
-                    Il ne vous reste plus qu’à franchir le seuil de la LIGHT ROOM et à vous laissez transporter dans un voyage époustouflant. 
-                    Vos émotions n’attendent que vous !
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    <div class="description-experience">
-        <img class="BG" src="../../../Assets/Images/Design/Vector 80.svg">
-        <div class="layout_2">
-            <div class="experience">
-                <h3 id = 'titre'>PRENEZ PART AU VOYAGE</h3>
-                    <img class="shangri-la" src="../../../Assets/Images/Picture/image 44.svg">
-                    <div class='BG_experience'>
-                        <div class="description-text3">
-                            <h3>SHANGRI-LA : LA CITÉ PERDUE DE Z  |  <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="LIGHT ROOM MINI"></h3>
-                        </div>
-                        <div class="description-explication">
-                            <p>
-                                Shangri-La la cité mythique, symbole de paix, de prospérité et de magnificence. Personne n'a apparemment pu se rendre en ce lieu
-                                depuis des décennies ou prouver son existence, du moins depuis votre découverte ! Aventurez-vous au plus profond des légendes,
-                                entrez dans la cité de Z avec votre équipe et explorez les lieux à la recherche de Percy Fawcett.
-                            </p>
-                        </div>
-                        <button class="discover-reserver" > <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" alt="Boutton réserver miniature"> </button>
+                </div>
+                <div class="connexion-box">
+                    <h2>Connexion</h2>
+                    <div class="form-group">
+                        <label for="username">Identifiant</label>
+                        <input type="text" id="username" placeholder="Pseudonyme">
                     </div>
-                    <img class="shangri-la" src="../../../Assets/Images/Picture/image 65.svg">
-                    <div class='BG_experience'>
-                        <div class="description-text3">
-                            <h3>NORDRËNN : LA LÉGENDE DE GLACE |<img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="LIGHT ROOM MINI"></h3>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="footer">
+                        <div class="account-options">
+                            <a href="#">Créer un compte</a>
+                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
                         </div>
-                        <div class="description-explication">
-                            <p>
-                                Dans le froid du royaume de Nordrënn, 
-                                il est une légende qui raconte comment un guerrier obtint la force de l’ours 
-                                et la clairvoyance du corbeau. Il est dit que pour conquérir la femme qu’il aimait, 
-                                cet homme parti à la recherche du trône d’Odin, artefact perdu depuis des années, qui offrait, 
-                                disait-on, le pouvoir du Père de Toute Chose. Le guerrier parti et ne revint jamais ; on raconte 
-                                qu’il aurait trouvé le trône mais, qu’avide de son pouvoir il ne le quitta plus. Partez à la découverte du 
-                                royaume glacé de Nordrënn et retrouvez le guerrier de la légende.
-                            </p>
-                        </div>
-                        <button class="discover-reserver" > <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" alt="Boutton réserver miniature"> </button>
+                        <button class="connexion-btn"><span>Connexion</span></button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div>
-        <div class="carroussel">
-            <img class="img_carroussel" id="img_carroussel" src="">
-            <div class="next">
-                <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
-                <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
-            </div>
-            <div class="txt_carroussel">
-                <p id="txt_carroussel">
 
-                </p>
-            </div>
-            <div class="rectangles">
-                <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+        <div class="logo_room">
+            <span><img class="dark_room" src="image/DARK ROOM (2).svg" alt="Logo_Dark_Room"></span>
+            <span><img class="battle_room" src="image/BATTLE RROM.svg" alt="Logo_Battle_Room"></span>
+            <img class="creative_room" src="image/CREATIVE (1).svg" alt="Logo_Creative_Room">
+        </div>
+
+        <div class="logo-lightroom">
+            <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
+        </div>
+
+        <div>
+            <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
+        </div>
+
+        <div class="description" id="description">
+            <img class="description-button-video" src="image/VIDEO.svg" alt="image pour la video" onclick="openVideo()">
+            <div class="description-text">
+                <div class="description-text2">
+                    <h1>QU'EST CE QUE <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM mini.svg" alt="logo secondaire the sense"> ?</h1>
+                </div>
+                <div class="description-explication">
+                    <p>
+                        Voyagez, explorez, découvrez LIGHT ROOM ! 
+                        Découvrez des paysages somptueux et des histoires palpipante dans cette salle accessible pour toute la famille. 
+                        Ici tout n’est qu’affaire d’émotions et de beauté, 
+                        explorer les décors de nos expériences et partez à l’aventure en famille ou entre amis à partir de 12 ans. 
+                        Il ne vous reste plus qu’à franchir le seuil de la LIGHT ROOM et à vous laissez transporter dans un voyage époustouflant. 
+                        Vos émotions n’attendent que vous !
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <footer>
-        <div class="left">
-            <a href="#">Nous contacter</a>
-            <span><a href="#">Réservations</a></span>
-            <span><a href="#">FAQ</a></span>
-        </div>
-        <div class="center">
-            <a href="#"><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
-        </div>
-        <div class="right">
-            <div class="txt">
-                <a href="#">Modalités</a>
-                <span>|</span>
-                <span><a href="#">Politique de confidentialité</a></span>
-            </div>
-            <div class="img">
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+        <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
+            <div class="video-container">
+                <span class="close-video" onclick="closeVideo()">&times;</span>
+                <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-    </footer>
-    <!--JQuery-->
-    <script src="../../jquery.js"></script>
-    <!--JavaScript-->
-    <script type="text/javascript" src="script.js"></script>
-</body>
+
+        <div class="description-experience">
+            <div class="experience">
+                <h3 id = 'titre'>PRENEZ PART AU VOYAGE</h3>
+                <img class="shangri-la" src="../../../Assets/Images/Picture/image 44.svg">
+                <div class='BG_experience'>
+                    <div class="description-text3">
+                        <h3>SHANGRI-LA : LA CITÉ PERDUE DE Z  |  <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="LIGHT ROOM MINI"></h3>
+                    </div>
+                    <div class="description-explication">
+                        <p>
+                            Shangri-La la cité mythique, symbole de paix, de prospérité et de magnificence. Personne n'a apparemment pu se rendre en ce lieu
+                            depuis des décennies ou prouver son existence, du moins depuis votre découverte ! Aventurez-vous au plus profond des légendes,
+                            entrez dans la cité de Z avec votre équipe et explorez les lieux à la recherche de Percy Fawcett.
+                        </p>
+                    </div>
+                    <button class="discover-reserver" > <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" alt="Boutton réserver miniature"> </button>
+                </div>
+                <img class="shangri-la" src="../../../Assets/Images/Picture/image 65.svg">
+                <div class='BG_experience'>
+                    <div class="description-text3">
+                        <h3>NORDRËNN : LA LÉGENDE DE GLACE |<img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="LIGHT ROOM MINI"></h3>
+                    </div>
+                    <div class="description-explication">
+                        <p>
+                            Dans le froid du royaume de Nordrënn, 
+                            il est une légende qui raconte comment un guerrier obtint la force de l’ours 
+                            et la clairvoyance du corbeau. Il est dit que pour conquérir la femme qu’il aimait, 
+                            cet homme parti à la recherche du trône d’Odin, artefact perdu depuis des années, qui offrait, 
+                            disait-on, le pouvoir du Père de Toute Chose. Le guerrier parti et ne revint jamais ; on raconte 
+                            qu’il aurait trouvé le trône mais, qu’avide de son pouvoir il ne le quitta plus. Partez à la découverte du 
+                            royaume glacé de Nordrënn et retrouvez le guerrier de la légende.
+                        </p>
+                    </div>
+                    <button class="discover-reserver" > <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" alt="Boutton réserver miniature"> </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="carroussel">
+                <img class="img_carroussel" id="img_carroussel" src="">
+                <div class="next">
+                    <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
+                    <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
+                </div>
+                <div class="txt_carroussel">
+                    <p id="txt_carroussel">
+
+                    </p>
+                </div>
+                <div class="rectangles">
+                    <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                    <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                    <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                    <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                    <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="left">
+                <a href="#">Nous contacter</a>
+                <span><a href="#">Réservations</a></span>
+                <span><a href="#">FAQ</a></span>
+            </div>
+            <div class="center">
+                <a href="#"><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+            </div>
+            <div class="right">
+                <div class="txt">
+                    <a href="#">Modalités</a>
+                    <span>|</span>
+                    <span><a href="#">Politique de confidentialité</a></span>
+                </div>
+                <div class="img">
+                    <span><a href="#"><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                    <span><a href="#"><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                    <span><a href="#"><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                    <span><a href="#"><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+                </div>
+            </div>
+        </footer>
+        <!--JQuery-->
+        <script src="../../jquery.js"></script>
+        <!--JavaScript-->
+        <script type="text/javascript" src="script.js"></script>
+    </body>
 
 </html>
