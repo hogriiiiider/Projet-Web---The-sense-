@@ -11,15 +11,11 @@
 }
 
 .nav {
-    position: fixed;
-    height: auto;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     padding-bottom: 10px;
-    display: inline-block;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 50;
@@ -30,13 +26,13 @@
     padding-left: 4%;
     max-width: 100%;
     height: auto;
-    width: 3%;
-    transition: width 3s ease;
+    width: auto;
+    transition: all 1s ease;
 }
 
 .nav-image img:hover{
-    width: 7%;
-    height: auto;
+    transform: scale(1.2);
+    margin: 10%;
 }
 
 .nav-droite a {
@@ -49,7 +45,7 @@
 
 .nava {
     font-family: Amiko;
-    font-size: 1.4vw;
+    font-size: 1.5vw;
     font-weight: 400;
     line-height: 27px;
     letter-spacing: -0.080em;
@@ -58,6 +54,10 @@
     padding-top: 15px;
     display: flex;
     padding-right: 2%;
+}
+
+.nava a{
+    transition: all 1s ease-in-out;
 }
 
 .nava a:hover{
@@ -74,17 +74,18 @@
 }
 
 .connexion-box {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
     background-color: #fff;
     padding: 20px;
-    height: auto;
-    max-height: auto;
-    width: 400px;
+    width: 70%;
     max-width: 400px;
-    margin-left: 75%;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    display: none;
+    flex-direction: column;
 }
 
 .connexion-box h2 {
@@ -116,12 +117,14 @@ border-radius: 4px;
 background-color: #fff; 
 color: #333; 
 }
+
 .account-options {
     margin-bottom: -6%;
     margin-right: 5%;
 }
 
 .footer {
+    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -177,23 +180,12 @@ color: #333;
     color: black;
 }
 
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(image/DESIGN-DE-FOND.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-
 body {
     background-image: url(image/DESIGN-DE-FOND.svg);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    position: relative;
 }
 
 .acroche{
@@ -204,11 +196,12 @@ body {
     letter-spacing: 0em;
     text-align: center;
     color: rgba(0, 0, 0, 1);
-    margin-top: 26%;
+    margin-top: 23%;
 }
 
 .decouvrir {
     text-decoration: none;
+    text-align: center;
 }
 
 .button_anim {
@@ -816,6 +809,7 @@ body {
 }
 
 .news h1 {
+    margin-left: -70%;
     font-family: Amiko;
     font-size: 30px;
     font-weight: 700;
@@ -835,7 +829,7 @@ body {
 
 .news-item {
     flex: 0 0 48%;
-    margin-bottom: 20px; /* Ajoute une marge entre les éléments */
+    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -862,6 +856,7 @@ body {
     letter-spacing: -0.03em;
     margin-top: 10px;
     margin-bottom: 0;
+    color: #3B4040;
 }
 
 .news-item p {
@@ -880,6 +875,17 @@ body {
     .news-item {
         flex: 0 0 48%;
     }
+}
+
+.journaux h1{
+    margin-left: -50%;
+    text-align: center;
+    font-family: Amiko;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 53px;
+    letter-spacing: -0.03em;
+    color: #3B4040;
 }
 
 .journaux-section {
@@ -1030,6 +1036,7 @@ footer{
     color: #82FFE1;
     display: flex;
     justify-content: space-between;
+    margin-bottom: -100%;
 }
 
 footer .left{

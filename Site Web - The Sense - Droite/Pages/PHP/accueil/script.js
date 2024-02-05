@@ -21,16 +21,16 @@ function closeVideo() {
 }
 
 function less() {
-    // Retrieve the current value
+
     const nbPeopleElement = document.querySelector('.number-people');
     let currentNbPeople = parseInt(nbPeopleElement.textContent);
     currentNbPeople = Math.max(currentNbPeople - 1, 1);
     nbPeopleElement.textContent = currentNbPeople;
 
-    // Calculate the new price for elements with class "room-price"
+  
     updateRoomPrice('.room-price', currentNbPeople, false);
 
-    // Calculate the new price for elements with class "room-price-2"
+
     updateRoomPrice('.room-price-2', currentNbPeople, false);
 }
 
@@ -40,10 +40,10 @@ function add() {
     currentNbPeople = Math.min(currentNbPeople + 1, 8);
     nbPeopleElement.textContent = currentNbPeople;
 
-    // Calculate the new price for elements with class "room-price"
+
     updateRoomPrice('.room-price', currentNbPeople, true);
 
-    // Calculate the new price for elements with class "room-price-2"
+
     updateRoomPrice('.room-price-2', currentNbPeople, true);
 }
 
@@ -85,21 +85,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentWeek = 0;
 
     function updateWeek() {
-        // Calculate the starting date of the current week (starting from Tuesday)
+
         const today = new Date();
         today.setDate(today.getDate() + currentWeek * 7);
         let startDay = new Date(today);
     
-        // Find the next Tuesday
+
         while (startDay.getDay() !== 2) {
             startDay.setDate(startDay.getDate() + 1);
         }
     
-        // Calculate the ending date of the current week (ending on Monday)
+
         let endDay = new Date(startDay);
         endDay.setDate(startDay.getDate() + numberOfColumns - 1);
     
-        // Set the content of the spans
+
         startDaySpan.textContent = startDay.getDate();
         endDaySpan.textContent = endDay.getDate();
         endMonthSpan.textContent = endDay.toLocaleDateString('fr-FR', { month: 'short' });
@@ -107,46 +107,54 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < numberOfColumns; i++) {
             const nextDay = new Date(startDay);
             nextDay.setDate(startDay.getDate() + i);
-        
+    
             const dayElement = document.createElement('div');
             dayElement.classList.add('column');
-        
+    
             const dayDate = document.createElement('a');
             dayDate.classList.add('date');
-        
+    
             if (i === 0) {
                 dayElement.classList.add('aujourdhui');
                 dayDate.textContent = startDay.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'short' });
             } else {
                 dayDate.textContent = nextDay.toLocaleDateString('fr-FR', { weekday: 'long' }) + ' ' + nextDay.getDate() + ' ' + nextDay.toLocaleDateString('fr-FR', { month: 'short' });
             }
-        
+    
             dayElement.appendChild(dayDate);
-        
-            for (let j = 0; j < 10; j++) {
+    
+            const timeSlots = ['10h20', '11h50', '13h20', '14h50', '16h20', '17h50', '19h20', '20h50'];
+    
+
+            if (nextDay.getDay() === 5 || nextDay.getDay() === 6) {
+                timeSlots.push('22h20', '23h50');
+            } else {
+
+                timeSlots.push('-', '-');
+            }
+    
+            for (const timeSlotText of timeSlots) {
                 const timeSlot = document.createElement('p');
-                timeSlot.textContent = '-';
+                timeSlot.textContent = timeSlotText;
                 dayElement.appendChild(timeSlot);
             }
-        
+    
             daysContainer.appendChild(dayElement);
-        
+    
             if (i < numberOfColumns - 1) {
                 const separator = document.createElement('div');
                 separator.classList.add('separator');
                 daysContainer.appendChild(separator);
             }
         }
-        
-        
     }
     
     function clearColumns() {
-        // Clear existing columns
+
         daysContainer.innerHTML = '';
     }
 
-    // Event listeners for changing the week
+
     prevWeekBtn.addEventListener('click', function () {
         currentWeek--;
         clearColumns();
@@ -159,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateWeek();
     });
 
-    // Initial load
+
     updateWeek();
 });
 // PLANNING
