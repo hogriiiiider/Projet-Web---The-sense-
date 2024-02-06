@@ -251,7 +251,8 @@
 
 .description-experience{
     display: flex;
-    background: url("../../../Assets/Images/Design/Vector 80.svg");
+    background: url("../../../Assets/Images/Design/Vector 82.svg");
+    background-color: #131412;
 }
 
 .layout_2{
@@ -262,14 +263,14 @@
 .bg_achat{
     display: block;
     text-align: center;
-    background: url("../../../Assets/Images/Picture/image\ 45.svg");
+    background: url("../../../Assets/Images/Picture/image\ 85.svg");
     background-size: cover;
     background-repeat:no-repeat ;
     background-color: #000000;
     color: white;
     border-radius: 10px 10px 0px 0px;
-    margin-left: 5%;
-    width: 90%;
+    margin-left: 3%;
+    width: 200%;
     padding-bottom: 4%;
     margin-top: 5%;
 }
@@ -430,17 +431,16 @@
     margin-bottom: 10%;
     font-family: Abel;
     font-size: 25px;
-    width: 82%;
+    width: 192%;
     background-color: #131412;
     color: white;
     text-align: center;
-    margin-left: 5%;
+    margin-left: 3%;
     border-radius: 0px 0px 10px 10px;
 }
 
 .color_info{
     color: #db0000;
-    font-size: 15px;
     font-family: Abel;
 }
 
