@@ -430,6 +430,24 @@ color: #333;
     display: none;
 }
 
+.random1, .random2, .random3{
+    position: absolute;
+    top: 90%;
+    
+}
+
+.random1 img{
+    width: 10%;
+    height: auto;
+    left: 43%;
+}
+
+.random2 img, .random3 img{
+    width: 10%;
+    height: auto;
+    left: 45%;
+}
+
 .darkroom-choice {
     text-align: left;
     position: relative;
@@ -615,6 +633,59 @@ color: #333;
     text-align: center;
     cursor: pointer;
 }
+
+
+
+.carroussel{
+    position: relative;
+    width: 100%;
+    padding-top: -5%;
+    display: flex;
+}
+.img_carroussel{
+    width: 100%;
+    z-index: 0;
+}
+
+.next{
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.next #suivant{
+    cursor: pointer;
+}
+
+.next #precedent{
+    cursor: pointer;
+}
+
+.txt_carroussel{
+    position: absolute;
+    font-family: Amiko;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    margin-left:18%;
+    margin-right: 18%;
+    margin-top: 26%;
+}
+
+.rectangles{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin-left:41%;
+    margin-top: 41%;
+}
+.rectangles img{
+    margin-right: 15%;
+}
+
+
 
 footer{
     width: 100%;
