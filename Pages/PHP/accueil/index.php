@@ -79,7 +79,7 @@
         <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
             <div class="video-container">
                 <span class="close-video" onclick="closeVideo()">&times;</span>
-                <iframe width="100%" height="100%" src="video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -91,7 +91,7 @@
             <h1>NOS EXPÉRIENCES LES PLUS APPRÉCIÉES</h1>
 
             <div class="les-experience-image-shangri">
-                <img class="img-shangri" src="image/image 44.svg" alt="Shangri">
+                <img class="img-shangri" src="image/image 44.jpg" alt="Shangri">
                 <div class="les-experience-shangri">
                     <div class="les-experience-shangri-title">
                         <h1>SHANGRI-LA : LA CITÉ PERDUE DE Z</h1>
@@ -115,7 +115,7 @@
             </div>
 
             <div class="les-experience-image-shangri">
-                <img class="img-shangri" src="image/image-2.svg" alt="Shangri">
+                <img class="img-shangri" src="image/image-2.jpg" alt="Shangri">
                 <div class="les-experience-shangri">
                     <div class="les-experience-conjuring-title">
                         <h1>THE CONJURING EXPERIENCE</h1>
@@ -141,7 +141,7 @@
             </div>
 
             <div class="les-experience-image-shangri">
-                <img class="img-shangri" src="image/image-3.svg" alt="Shangri">
+                <img class="img-shangri" src="image/image-3.jpg" alt="Shangri">
                 <div class="les-experience-shangri">
                     <div class="les-experience-battle-title">
                         <h1>ULTIMATE FIGHT</h1>
