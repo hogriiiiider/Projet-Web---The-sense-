@@ -154,6 +154,25 @@
     display: block;
 }
 
+.discover-retour {
+    width: 20vw;
+    max-width: 263px;
+    height: 4vw;
+    border: none;
+    background-color: transparent;
+    font-family: Amiko, sans-serif;
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 37px;
+    text-align: center;
+    color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    display: block;
+    font-weight: bold;
+}
+
 .description{
     background: rgba(234, 255, 251, 1);
     display: flex;
@@ -308,6 +327,11 @@
 
 .shangri-la{
     width: 100%;
+}
+
+.dark_room_minia{
+    width: 150%;
+
 }
 
 .BG_experience{
@@ -528,4 +552,11 @@ footer a{
 
 .description_color{
     color: white;
+}
+
+.miniature{
+    display: flex;
+    width: 1350px;
+    height: 328px;
+    text-align: center;
 }
