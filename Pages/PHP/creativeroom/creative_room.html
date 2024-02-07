@@ -3,13 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Creative Room</title>
         <link rel="stylesheet" href="styles.css">
-        <title>Battle Room</title>
     </head>
-
-
     <body>
-
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
@@ -36,7 +33,6 @@
                         <label for="password">Mot de passe</label>
                         <input type="password" id="password" placeholder="Mot de passe">
                     </div>
-                    <p class="wronguser">Mauvais identifiant ou mot de passe</p>
                     <div class="footer">
                         <div class="account-options">
                             <a href="#">Créer un compte</a>
@@ -48,83 +44,109 @@
             </div>
         </div>
 
-        <div class="logo_room">
-            <span><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_Dark_Room"></span>
-            <span><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Battle_Room"></span>
-            <img class="creative_room" src="image/LITTLE-CREATIVE.svg" alt="Logo_Creative_Room">
-        </div>
-        
-        <img class="light_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Light_Room">
-
-        <div>
-            <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
-        </div> 
-
-        <div class="description" id="description">
-            <img class="description-button-video" src="image/IMAGE-VIDEO-BATTLE.svg" alt="image pour la video" onclick="openVideo()">
-            <div class="description-text">
-                <div class="description-text2">
-                    <h1>QU'EST CE QUE <img class="logo-description" src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="logo secondaire the sense"> ?</h1>
-                </div>
-                <div class="description-explication">
-                    <p>
-                        Vous cherchez à connaitre qui est le meilleur dans la famille ou qui fera le S.A.M ce
-                        soir ? Venez régler vos comptes dans la BATTLE ROOM par équipe de 1 à 4 joueurs soit 8 joueurs au maximum. Au travers de nos différents modes de jeux, prouvez votre courage et montrez qu’au reste du monde que vous êtes le meilleur. Battez tous les records, faites ressortirvotre côté compétitif et pas de quartier ! N'attendez plus et rejoignez l’arène, pour prouver que vous serez le prochain champion de THE SENSE.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
-            <div class="video-container">
-                <span class="close-video" onclick="closeVideo()">&times;</span>
-                <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
         <div class="page">
+            <div>   
+                <div class="logo_room">
+                    <span><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_LIGHT_Room"></span>
+                    <span><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></span>
+                    <img class="creative_room" src="image/LITTLE-BATTLE-ROOM (1).svg" alt="Logo_BATTLE_Room">
+                </div> 
+                <div class="logo-lightroom"> 
+                    <img class="logo_creative" src="image/CREATIVE (1).svg" alt="logo Creative Room">
+                </div> 
+            <div>
+                <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
+            </div>
+
+            <div class="description" id="description">
+                <img class="description-button-video" src="image/IMAGE-VIDEO-CREATIVE.svg" alt="image pour la video" onclick="openVideo()">
+                <div class="description-text">
+                    <div class="description-text2">
+                        <h1>QU'EST CE QUE <img class="logo-description" src="image/CREATIVE-293x35.svg" alt="logo secondaire the sense"> ?</h1>
+                    </div>
+                    <div class="description-explication">
+                        <p>
+                            Notre catalogue ne vous suffit pas ? Vous aimeriez laisser parler votre imagination ? Grâce à la CREATIVE ROOM, concept inédit en France, la créativité est votre seule limite, créez de toute pièce l'univers dans lequel vous voyagerez par la suite. Que ce soit dans la jungle ou en haut de montagnes enneigées, pour affronter des démons ou enquêter sur la disparition de bébés licornes roses fluos, le choix vous appartient. Alors tester votre imagination dans la CREATIVE ROOM et entraîner vos amis ou votre famille dans votre univers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-video" id="overlayVideo" onclick="closeVideo()">
+                <div class="video-container">
+                    <span class="close-video" onclick="closeVideo()">&times;</span>
+                    <iframe width="100%" height="100%" src="../../../Assets/Images/video/Copie de Trailer - The Sense.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div class="TheReality">
-                <h1>DÉFIEZ VOS ADVERSAIRES</h1>
+                <h1>VOTRE EXPÉRIENCE ENTRE VOS MAINS</h1>
+                <p>Suivez les étapes pour créer votre propre aventure. Nous mettons à votre disposition la possibilité de choisir tous les éléments
+                   de votre room dans le but de vous offrir l’expérience ultime qui VOUS correspond. Basculez entre chaque étape, modifier vos choix à tout moment pour que ceux-ci correspondent à vos besoins.</p>
             </div>
-            
-            <div class="les-experience-image-shangri">
-                <img class="img-shangri" src="image/image-3.jpg" alt="Shangri">
-                <div class="les-experience-shangri">
-                    <div class="les-experience-battle-title">
-                        <h1>ULTIMATE FIGHT</h1>
-                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
+
+            <div class="CREAT-IMAGE-ROOM">
+                <div>
+                    <img src="image/CREAT-DARK.svg" alt="dark room">
+                </div>
+
+                <div class="choice-n1">
+                    <div class="darkroom-choice">
+                        <img src="image/DARK ROOM.jpg" alt="darkroom-choice">
+                        <p id="e1">ESCAPE GAME</p>
+                        <p id="e2">BATTLE</p>
+                        <p id="e3">SURVIVAL</p>
+                        <div class="random1">
+                            <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 1">
+                        </div>
                     </div>
-                    <div class="les-experience-shangri-texte">
-                        <p>
-                            Sentez votre cœur battre, votre souffle se couper, votre concentration monter... Enrôlez des joueurs, formez votre équipe et
-                            préparez vous au combat ! Arrachez la victoire à vos adversaires à travers une bataille dans des décors et des "maps" des
-                            plus immersives. En équipe de 4 ou 5 voyez lesquels d’entre vous sont digne de remporter le trophée.
-                        </p>
+                </div>
+                <div class="choice-n2">
+                    <div class="darkroom-choice-2">
+                        <img src="image/DARK ROOM (1).jpg" alt="darkroom-choice-2">
+                        <p id="f1">CIMETIÈRE</p>
+                        <p id="f2">MAISON</p>
+                        <p id="f3">ÉCOLE</p>
+                        <span class="choice-1st">- </span>
+                        <span class="modify-1st">(modified)</span>
+                        <div class="random2">
+                            <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 2">
+                        </div>
                     </div>
-                    <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="open_reserv()">
+                </div>
+                <div class="choice-n3">
+                    <div class="darkroom-choice-3">
+                        <img src="image/DARK ROOM (2).jpg" alt="darkroom-choice-3">
+                        <p id="g1" onclick="open_reserv()">FLIPETTE</p>
+                        <p id="g2" onclick="open_reserv()">DARK ROOM</p>
+                        <p id="g3" onclick="open_reserv()">FOU FURIEUX</p>
+                        <span class="choice-1st">- </span>
+                        <span class="modify-1st">(modified)</span>
+                        <span class="choice-2nd">- MAISON</span>
+                        <span class="modify-2nd">(modified)</span>
+                        <div class="random3">
+                            <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 3">
+                        </div>
                     </div>
+                </div>
+
+                <div>
+                    <img src="image/CREAT-LIGHT.png" alt="light room">
+                </div>
+                <div>
+                    <img src="image/CREAT-BATTLE.svg" alt="battle room">
                 </div>
             </div>
 
-            <div class="les-experience-image-shangri-2">
-                <img class="img-shangri" src="image/image-4.jpg" alt="Shangri">
-                <div class="les-experience-shangri">
-                    <div class="les-experience-battle-title">
-                        <h1>GARDEN WAR</h1>
-                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
-                    </div>
-                    <div class="les-experience-shangri-texte">
-                        <p>
-                            Partez au front, avec vos amis ou votre famille, découvrez un univers certes plus cartoonesque mais ne vous y méprenez pas, vos ennemies vous attendent. Vous avez pour objectifs de remporter les batailles ! Munissez vous de vos plus fidèles soldats et partez en guerre. Cette expérience en équipe de 4-5 joueurs vous propose de découvrir l'univers cartoonesque mais compétitif de notre nouvelle room. Qu'attendez-vous soldat ?
-                        </p>
-                    </div>
-                    <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
-                    </div>
-                </div>
+            <div class="TheReality">
+                <h1>OU CONFIEZ VOTRE DESTIN AU HASARD</h1>
+                <p>Vous pensez pouvoir tout affronter sans problème, laisser le hasard décider de votre room et choisissez simplement la
+                    difficulté. </p>
             </div>
 
-
+            <div class="CREAT-IMAGE-ROOM">
+                <img src="image/CREAT-ALEATOIRE.svg" alt="aleatoire">
+            </div>
+        
 
             <div>
                 <div class="carroussel">
@@ -135,7 +157,7 @@
                     </div>
                     <div class="txt_carroussel">
                         <p id="txt_carroussel">
-        
+                        
                         </p>
                     </div>
                     <div class="rectangles">
@@ -148,7 +170,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
 
         <div class="reservation">
             <div class="retour">
@@ -156,7 +178,7 @@
             </div>
 
             <div class="image-reserv">
-                <img src="../../../Assets/Images/Picture/img-battleroom-reserv.jpg" alt="IMAGE RESERVATION">
+                <img src="../../../Assets/Images/Picture/img-creat-darkroom-reserv.jpg" alt="IMAGE RESERVATION">
             </div>
 
             <div class="planning-reservation">
@@ -276,7 +298,7 @@
                     <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
                 </div>
                 <div class="annuler">
-                    <a href="Pages\PHP\accueil\index.php">ANNULER</a>
+                    <a href="Pages\PHP\accueil\index.php" onclick="close_reserv()">ANNULER</a>
                 </div>
                 <div class="useful-information">
                     <img src="../../../Assets/Images/Picture/INFORMATIONS IMPORTANTES.svg" alt="INFORMATIONS IMPORTANTES">
@@ -287,29 +309,27 @@
     </body>
     <footer>
         <div class="left">
-            <a href="#">Nous contacter</a>
-            <span><a href="#">Réservations</a></span>
-            <span><a href="#">FAQ</a></span>
+            <a>Nous contacter</a>
+            <span><a>Réservations</a></span>
+            <span><a>FAQ</a></span>
         </div>
         <div class="center">
-            <a href="#"><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+            <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
         </div>
         <div class="right">
             <div class="txt">
-                <a href="#">Modalités</a>
+                <a>Modalités</a>
                 <span>|</span>
-                <span><a href="#">Politique de confidentialité</a></span>
+                <span><a>Politique de confidentialité</a></span>
             </div>
             <div class="img">
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
-                <span><a href="#"><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                <span><a><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
             </div>
         </div>
     </footer>
-    <!--JQuery-->
     <script src="../../jquery.js"></script>
-    <!--JavaScript-->
     <script type="text/javascript" src="script.js"></script>
 </html>

@@ -153,6 +153,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // PLANNING
 
+document.getElementById('player-count').addEventListener('change', function() {
+    const playerCount = parseInt(this.value);
+    const selectedTimeText = document.getElementById('selected-time').textContent;
+   
+    const selectedHour = parseInt(selectedTimeText.match(/\d+/)[0]);
+    const isDayTime = selectedHour >= 10 && selectedHour < 18;
+    const initialPrice = isDayTime ? 50 : 65;
+
+    let totalPrice = initialPrice;
+
+
+    if (playerCount > 1) {
+        totalPrice = ((initialPrice / playerCount) + 15) * playerCount;
+    }
+
+    document.getElementById('total-price').textContent = `${totalPrice.toFixed(2)} €`;
+});
+
 //RESERVATION
 function open_reserv(){
     const reservation = document.querySelector('.reservation');
