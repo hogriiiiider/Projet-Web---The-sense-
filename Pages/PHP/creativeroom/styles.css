@@ -439,7 +439,7 @@ color: #333;
 .random1 img{
     width: 10%;
     height: auto;
-    left: 43%;
+    margin-left: 465%;
 }
 
 .random2 img, .random3 img{
@@ -458,7 +458,7 @@ color: #333;
 }
 
 .darkroom-choice img {
-    width: 86%;
+    width: 100%;
 }
 
 .darkroom-choice img:hover{
