@@ -3,10 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Creative Room</title>
         <link rel="stylesheet" href="styles.css">
+        <title>Battle Room</title>
     </head>
+
+
     <body>
+
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
@@ -33,6 +36,7 @@
                         <label for="password">Mot de passe</label>
                         <input type="password" id="password" placeholder="Mot de passe">
                     </div>
+                    <p class="wronguser">Mauvais identifiant ou mot de passe</p>
                     <div class="footer">
                         <div class="account-options">
                             <a href="#">Créer un compte</a>
@@ -43,28 +47,29 @@
                 </div>
             </div>
         </div>
-        <div>   
-            <div class="logo_room">
-                <span><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_LIGHT_Room"></span>
-                <span><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></span>
-                <img class="creative_room" src="image/LITTLE-BATTLE-ROOM (1).svg" alt="Logo_BATTLE_Room">
-            </div> 
-            <div class="logo-lightroom"> 
-                <img class="logo_creative" src="image/CREATIVE (1).svg" alt="logo Creative Room">
-            </div> 
+
+        <div class="logo_room">
+            <span><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_Dark_Room"></span>
+            <span><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Battle_Room"></span>
+            <img class="creative_room" src="image/LITTLE-CREATIVE.svg" alt="Logo_Creative_Room">
+        </div>
+        
+        <img class="light_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Light_Room">
+
         <div>
             <a href="#description"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
-        </div>
+        </div> 
 
         <div class="description" id="description">
-            <img class="description-button-video" src="image/IMAGE-VIDEO-CREATIVE.svg" alt="image pour la video" onclick="openVideo()">
+            <img class="description-button-video" src="image/IMAGE-VIDEO-BATTLE.svg" alt="image pour la video" onclick="openVideo()">
             <div class="description-text">
                 <div class="description-text2">
-                    <h1>QU'EST CE QUE <img class="logo-description" src="image/CREATIVE-293x35.svg" alt="logo secondaire the sense"> ?</h1>
+                    <h1>QU'EST CE QUE <img class="logo-description" src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="logo secondaire the sense"> ?</h1>
                 </div>
                 <div class="description-explication">
                     <p>
-                        Notre catalogue ne vous suffit pas ? Vous aimeriez laisser parler votre imagination ? Grâce à la CREATIVE ROOM, concept inédit en France, la créativité est votre seule limite, créez de toute pièce l'univers dans lequel vous voyagerez par la suite. Que ce soit dans la jungle ou en haut de montagnes enneigées, pour affronter des démons ou enquêter sur la disparition de bébés licornes roses fluos, le choix vous appartient. Alors tester votre imagination dans la CREATIVE ROOM et entraîner vos amis ou votre famille dans votre univers.
+                        Vous cherchez à connaitre qui est le meilleur dans la famille ou qui fera le S.A.M ce
+                        soir ? Venez régler vos comptes dans la BATTLE ROOM par équipe de 1 à 4 joueurs soit 8 joueurs au maximum. Au travers de nos différents modes de jeux, prouvez votre courage et montrez qu’au reste du monde que vous êtes le meilleur. Battez tous les records, faites ressortirvotre côté compétitif et pas de quartier ! N'attendez plus et rejoignez l’arène, pour prouver que vous serez le prochain champion de THE SENSE.
                     </p>
                 </div>
             </div>
@@ -76,93 +81,205 @@
             </div>
         </div>
 
-        <div class="TheReality">
-            <h1>VOTRE EXPÉRIENCE ENTRE VOS MAINS</h1>
-            <p>Suivez les étapes pour créer votre propre aventure. Nous mettons à votre disposition la possibilité de choisir tous les éléments
-               de votre room dans le but de vous offrir l’expérience ultime qui VOUS correspond. Basculez entre chaque étape, modifier vos choix à tout moment pour que ceux-ci correspondent à vos besoins.</p>
-        </div>
-
-        <div class="CREAT-IMAGE-ROOM">
-            <div>
-                <img src="image/CREAT-DARK.svg" alt="dark room">
+        <div class="page">
+            <div class="TheReality">
+                <h1>DÉFIEZ VOS ADVERSAIRES</h1>
             </div>
-
-            <div class="choice-n1">
-                <div class="darkroom-choice">
-                    <img src="image/DARK ROOM.jpg" alt="darkroom-choice">
-                    <p id="e1">ESCAPE GAME</p>
-                    <p id="e2">BATTLE</p>
-                    <p id="e3">SURVIVAL</p>
-                    <div class="random1">
-                        <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 1">
+            
+            <div class="les-experience-image-shangri">
+                <img class="img-shangri" src="image/image-3.jpg" alt="Shangri">
+                <div class="les-experience-shangri">
+                    <div class="les-experience-battle-title">
+                        <h1>ULTIMATE FIGHT</h1>
+                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
                     </div>
-                </div>
-            </div>
-            <div class="choice-n2">
-                <div class="darkroom-choice-2">
-                    <img src="image/DARK ROOM (1).jpg" alt="darkroom-choice-2">
-                    <p id="f1">CIMETIÈRE</p>
-                    <p id="f2">MAISON</p>
-                    <p id="f3">ÉCOLE</p>
-                    <span class="choice-1st">- </span>
-                    <span class="modify-1st">(modified)</span>
-                    <div class="random2">
-                        <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 2">
+                    <div class="les-experience-shangri-texte">
+                        <p>
+                            Sentez votre cœur battre, votre souffle se couper, votre concentration monter... Enrôlez des joueurs, formez votre équipe et
+                            préparez vous au combat ! Arrachez la victoire à vos adversaires à travers une bataille dans des décors et des "maps" des
+                            plus immersives. En équipe de 4 ou 5 voyez lesquels d’entre vous sont digne de remporter le trophée.
+                        </p>
                     </div>
-                </div>
-            </div>
-            <div class="choice-n3">
-                <div class="darkroom-choice-3">
-                    <img src="image/DARK ROOM (2).jpg" alt="darkroom-choice-3">
-                    <p id="g1">FLIPETTE</p>
-                    <p id="g2">DARK ROOM</p>
-                    <p id="g3">FOU FURIEUX</p>
-                    <span class="choice-1st">- </span>
-                    <span class="modify-1st">(modified)</span>
-                    <span class="choice-2nd">- MAISON</span>
-                    <span class="modify-2nd">(modified)</span>
-                    <div class="random3">
-                        <img src="image/Bouton Aléatoire.svg" alt="bouton aleatoire 3">
+                    <div class="les-experience-reservation-shangri">
+                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="open_reserv()">
                     </div>
                 </div>
             </div>
 
-            <div>
-                <img src="image/CREAT-LIGHT.png" alt="light room">
-            </div>
-            <div>
-                <img src="image/CREAT-BATTLE.svg" alt="battle room">
-            </div>
-        </div>
-
-        <div class="TheReality">
-            <h1>OU CONFIEZ VOTRE DESTIN AU HASARD</h1>
-            <p>Vous pensez pouvoir tout affronter sans problème, laisser le hasard décider de votre room et choisissez simplement la
-                difficulté. </p>
-        </div>
-
-        <div class="CREAT-IMAGE-ROOM">
-            <img src="image/CREAT-ALEATOIRE.svg" alt="aleatoire">
-        </div>
-
-        <div>
-            <div class="carroussel">
-                <img class="img_carroussel" id="img_carroussel" src="">
-                <div class="next">
-                    <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
-                    <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
+            <div class="les-experience-image-shangri-2">
+                <img class="img-shangri" src="image/image-4.jpg" alt="Shangri">
+                <div class="les-experience-shangri">
+                    <div class="les-experience-battle-title">
+                        <h1>GARDEN WAR</h1>
+                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
+                    </div>
+                    <div class="les-experience-shangri-texte">
+                        <p>
+                            Partez au front, avec vos amis ou votre famille, découvrez un univers certes plus cartoonesque mais ne vous y méprenez pas, vos ennemies vous attendent. Vous avez pour objectifs de remporter les batailles ! Munissez vous de vos plus fidèles soldats et partez en guerre. Cette expérience en équipe de 4-5 joueurs vous propose de découvrir l'univers cartoonesque mais compétitif de notre nouvelle room. Qu'attendez-vous soldat ?
+                        </p>
+                    </div>
+                    <div class="les-experience-reservation-shangri">
+                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                    </div>
                 </div>
-                <div class="txt_carroussel">
-                    <p id="txt_carroussel">
-    
-                    </p>
+            </div>
+
+
+
+            <div>
+                <div class="carroussel">
+                    <img class="img_carroussel" id="img_carroussel" src="">
+                    <div class="next">
+                        <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
+                        <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
+                    </div>
+                    <div class="txt_carroussel">
+                        <p id="txt_carroussel">
+        
+                        </p>
+                    </div>
+                    <div class="rectangles">
+                        <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                    </div>
                 </div>
-                <div class="rectangles">
-                    <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                    <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                    <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                    <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                    <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+            </div>
+        </div>
+
+
+        <div class="reservation">
+            <div class="retour">
+                <p onclick="close_reserv()">RETOUR</p>
+            </div>
+
+            <div class="image-reserv">
+                <img src="../../../Assets/Images/Picture/img-battleroom-reserv.jpg" alt="IMAGE RESERVATION">
+            </div>
+
+            <div class="planning-reservation">
+                <div class="reservation-header">
+                    <h1>VOTRE RÉSERVATION EST PRÊTE !</h1>
+                    <h2>IL NE RESTE PLUS QU'À VALIDER !</h2>
+                </div> 
+                <div class="planning">
+                    <div class="first-part">
+                        <!-- Sélection de la semaine -->
+                        <div class="planning-date" id="week-range">
+                            <img src="../../../Assets/Images/Icones/Layer 2.svg" alt="flèche mois précedent" id="prev-week">
+                            <p>
+                                DU <span id="start-day">15</span> AU <span id="end-day">20</span> <span id="end-month">DÉCEMBRE</span>
+                            </p>
+                            <img src="../../../Assets/Images/Icones/Layer 3.svg" alt="flèche mois suivant" id="next-week">
+                        </div>
+                    
+                        <!-- Conteneur pour les jours -->
+                        <div class="day" id="days-container">
+                        </div>
+                    
+                        <!-- Légende pour la disponibilité -->
+                        <div class="disponibilite">
+                            <img src="../../../Assets/Images/Icones/LÉGENDE.svg" alt="disponibilité">
+                        </div>
+                    </div>
+                
+                    <div class="seconde-part">
+                    
+                        <!-- Formulaire de confirmation -->
+                        <div class="confirmation-container">
+                            <p id="selected-date"></p>
+                            <p id="selected-time"></p>
+                            <div class="form-column">
+                                <input type="text2" placeholder="Votre nom">
+                                <input type="email" placeholder="Votre adresse mail">
+                                <div class="option-player">
+                                    <!-- Sélection du nombre de joueurs -->
+                                    <select id="player-count" name="Nombre de joueurs"> 
+                                        <option value="" selected disabled hidden>Nbre de joueurs</option>
+                                        <!-- Options pour le nombre de joueurs -->
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-column">
+                                <input type="text" placeholder="Votre prénom">
+                                <input type="tel" placeholder="Votre n° de téléphone">
+                                <!-- Sélection de la manière dont l'utilisateur a découvert The Sense -->
+                                <select type="option-sense" id="the-sense">
+                                    <option class="false-value" value="" selected disabled hidden>J'ai découvert The Sense</option>
+                                    <!-- Options pour la découverte de The Sense -->
+                                    <option value="">Par des amis</option>
+                                    <option value="">Recherche internet</option>
+                                    <option value="">Publicité</option>
+                                    <option value="">Par de la famille</option>
+                                    <option value="">Je ne sais plus</option>
+                                </select>
+                            </div>
+                            <!-- Champ pour le code promo ou bon cadeau -->
+                            <input type="promo" placeholder="Code promo ou bon cadeau">
+                            <button>Appliquer</button>
+                            <p>TOTAL: <span id="total-price">...</span> €</p>
+                            <!-- Options de paiement -->
+                            <div class="payment-cargo">
+                                <p>SÉLECTIONNEZ VOTRE MOYEN DE PAIEMENT</p>
+                                <div class="payment-container">
+                                    <div class="payment-options">
+                                        <h3>Paiement groupé (en ligne)</h3>
+                                        <div class="payment-logo">
+                                            <!-- Options de paiement groupé -->
+                                            <div class="payment-online">
+                                                <div class="payment-option">
+                                                    <label> <img src="../../../Assets/Images/Icones/visa.svg" alt="Visa"><img src="../../../Assets/Images/Icones/mastercard.svg" alt="mastercard"> <img src="../../../Assets/Images/Icones/CB.svg" alt="CB">
+                                                    </label>
+                                                </div>
+                                                <div class="cards">
+                                                    <input type="radio" name="payment" value="grouped">
+                                                </div>
+                                                <div class="paypal">
+                                                    <img src="../../../Assets/Images/Icones/paypal.svg" alt="Paypal"><input type="radio" name="payment" value="grouped">
+                                                </div>
+                                            </div>
+                                            <div class="payment-option2">
+                                                <p>*En continuant, vous serez redirigé vers une page de paiement sécurisée.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Séparateur entre les options de paiement -->
+                                        <div class="payment-separator"></div>
+                                    <div>
+                                        <!-- Paiement individuel sur place -->
+                                        <div class="payment-option-3">
+                                            <h3>Paiement individuel (sur place)</h3>
+                                            <input type="radio" name="payment" value="individual">
+                                            <p>**Vous recevrez par mail la facturation de votre réservation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conditions">
+                                    <label><input type="checkbox"> J'accepte les conditions générales de vente</label>
+                                    <label><input type="checkbox"> Je souhaite offrir cette expérience à un proche</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-reserver-btn">
+                    <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                </div>
+                <div class="annuler">
+                    <a href="Pages\PHP\accueil\index.php">ANNULER</a>
+                </div>
+                <div class="useful-information">
+                    <img src="../../../Assets/Images/Picture/INFORMATIONS IMPORTANTES.svg" alt="INFORMATIONS IMPORTANTES">
                 </div>
             </div>
         </div>
@@ -170,27 +287,29 @@
     </body>
     <footer>
         <div class="left">
-            <a>Nous contacter</a>
-            <span><a>Réservations</a></span>
-            <span><a>FAQ</a></span>
+            <a href="#">Nous contacter</a>
+            <span><a href="#">Réservations</a></span>
+            <span><a href="#">FAQ</a></span>
         </div>
         <div class="center">
-            <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+            <a href="#"><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
         </div>
         <div class="right">
             <div class="txt">
-                <a>Modalités</a>
+                <a href="#">Modalités</a>
                 <span>|</span>
-                <span><a>Politique de confidentialité</a></span>
+                <span><a href="#">Politique de confidentialité</a></span>
             </div>
             <div class="img">
-                <span><a><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
-                <span><a><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
-                <span><a><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
-                <span><a><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
             </div>
         </div>
     </footer>
+    <!--JQuery-->
     <script src="../../jquery.js"></script>
+    <!--JavaScript-->
     <script type="text/javascript" src="script.js"></script>
 </html>
