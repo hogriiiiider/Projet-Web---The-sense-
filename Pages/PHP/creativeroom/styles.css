@@ -695,10 +695,21 @@ color: #333;
 }
 
 .retour{
-    text-align: start;
-    margin-bottom: 2%;
+    display: flex;
+    margin-left: 4%;
+    font-family: 'Amiko';
+    color: #3B4040;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-bottom: -1%;
 }
+.retour img{
+    margin-right: 10px;
 
+}
 .retour p:hover{
     cursor: pointer;
 }
