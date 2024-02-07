@@ -1,3 +1,5 @@
+//carrousel
+
 carroussel_bg = ["../../../Assets/Images/Picture/Rectangle 94.svg",
                 "../../../Assets/Images/Picture/image 127.svg",
                 "../../../Assets/Images/Picture/image 128.svg",
@@ -42,6 +44,16 @@ $("#suivant").on("click",function(){
     document.getElementById("txt_carroussel").innerHTML = carroussel_txt[img];
     document.getElementById(rect_num[img]).src = rect_color[1];
 })
+
+//caroussel
+
+function openVideo() {
+    document.getElementById("overlayVideo").style.display = "flex";
+}
+
+function closeVideo() {
+    document.getElementById("overlayVideo").style.display = "none";
+}
 
 // PLANNING
 document.addEventListener('DOMContentLoaded', function () {
@@ -141,19 +153,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // PLANNING
 
+document.getElementById('player-count').addEventListener('change', function() {
+    const playerCount = parseInt(this.value);
+    const selectedTimeText = document.getElementById('selected-time').textContent;
+   
+    const selectedHour = parseInt(selectedTimeText.match(/\d+/)[0]);
+    const isDayTime = selectedHour >= 10 && selectedHour < 18;
+    const initialPrice = isDayTime ? 50 : 65;
+
+    let totalPrice = initialPrice;
+
+
+    if (playerCount > 1) {
+        totalPrice = ((initialPrice / playerCount) + 15) * playerCount;
+    }
+
+    document.getElementById('total-price').textContent = `${totalPrice.toFixed(2)} €`;
+});
+
 //RESERVATION
+
+$("#reserv_1").on("click",function(){
+    document.getElementById("reserv_img").src = "../../../Assets/Images/Picture/CONJURING RESERV.svg"
+})
+
+$("#reserv_2").on("click",function(){
+    document.getElementById("reserv_img").src = "../../../Assets/Images/Picture/CONJURING RESERV.svg"
+})
+
 function open_reserv(){
     const reservation = document.querySelector('.reservation');
     const page = document.querySelector('.page');
+    const carroussel = document.querySelector('.carroussel');
     reservation.style.display = 'block'
     page.style.display = 'none'
+    carroussel.style.display = 'none'
 }
 
 function close_reserv(){
     const reservation = document.querySelector('.reservation');
     const page = document.querySelector('.page');
+    const carroussel = document.querySelector('.carroussel');
     reservation.style.display = 'none'
     page.style.display = 'block'
+    carroussel.style.display = 'flex'
 }
 //RESERVATION
 
