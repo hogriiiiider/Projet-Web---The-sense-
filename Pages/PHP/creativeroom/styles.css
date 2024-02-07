@@ -695,10 +695,21 @@ color: #333;
 }
 
 .retour{
-    text-align: start;
-    margin-bottom: 2%;
+    display: flex;
+    margin-left: 4%;
+    font-family: 'Amiko';
+    color: #3B4040;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+    text-align: center;
+    margin-bottom: -1%;
 }
+.retour img{
+    margin-right: 10px;
 
+}
 .retour p:hover{
     cursor: pointer;
 }
@@ -1220,6 +1231,76 @@ input[type="radio"] {
 }
 
 /* PLANNING JS */
+
+
+.description-experience{
+    display: block;
+    text-align: center;
+}
+
+.bg_achat{
+    display: block;
+    text-align: center;
+    background: url("../../../Assets/Images/Picture/creat-darkroom-recap.png");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 5%;
+    padding-bottom: 4%;
+    margin-top: 5%;
+}
+
+.phrase_de_validation{
+    font-family: Abel;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-right: 25%;
+    z-index: 1000;
+    color: white;
+}
+
+.color_info{
+    color: #db0000;
+}
+
+.bg_reservation_2 {
+    padding: 4%;
+    margin-bottom: 10%;
+    font-family: Abel;
+    font-size: 25px;
+    background-color: #131412;
+    color: white;
+    text-align: center;
+    margin-left: 5%;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.recap-achat{
+    margin-top: 1%;
+}
+
+.A48-HEURE{
+    font-family: Abel;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.remerciement{
+    font-family: Abel;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
 
 
 footer{

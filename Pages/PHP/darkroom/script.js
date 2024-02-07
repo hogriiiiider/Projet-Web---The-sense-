@@ -213,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 //Connexion
 $(".wronguser").hide();
 
