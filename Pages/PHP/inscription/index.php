@@ -11,7 +11,7 @@
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" />
+                <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
@@ -129,5 +129,5 @@
     </div>
 </footer>
 <script src="../../jquery.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="../script.js"></script>
 </html>

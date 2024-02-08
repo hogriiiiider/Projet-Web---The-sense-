@@ -10,7 +10,7 @@
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" />
+                    <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
@@ -105,7 +105,7 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                        <a href="../lightroom/light_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
                             <a class="text-lightroom" href="../lightroom/light_room.html">DÉCOUVREZ LA LIGHT ROOM</a>
                             <a class="description-arrow-2" href="../lightroom/light_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
@@ -131,7 +131,7 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                        <a href="../darkroom/dark_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
                             <a class="text-lightroom" href="../darkroom/dark_room.html">DÉCOUVREZ LA DARK ROOM</a>
                             <a class="description-arrow-2" href="../darkroom/dark_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
@@ -155,7 +155,7 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                        <a href="../battleroom/battle_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
                             <a class="text-lightroom" href="../battleroom/battle_room.html">DÉCOUVREZ LA BATTLE ROOM</a>
                             <a class="description-arrow-2" href="../battleroom/battle_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
@@ -177,10 +177,10 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                        <a href="../creativeroom/creative_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
-                            <a class="text-lightroom" href="../lightroom/light_room.html">DÉCOUVREZ LA CREATIVE ROOM</a>
-                            <a class="description-arrow-2" href="../lightroom/light_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                            <a class="text-lightroom" href="../creativeroom/creative_room.html">DÉCOUVREZ LA CREATIVE ROOM</a>
+                            <a class="description-arrow-2" href="../creativeroom/creative_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                         </div>
                     </div>
                 </div>
@@ -417,5 +417,5 @@
         </div>
     </footer>
     <script src="../../jquery.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../script.js"></script>
 </html>
