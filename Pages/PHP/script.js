@@ -68,28 +68,34 @@ function afficherEmail(Message) {
 $(".wronguser").hide();
 
 $(".connexion-btn").on("click", function () {
-    var _username = $('#username').val();
-    var _password = $("#password").val();
-    if (_username.length > 0 && _username.includes('@') && _password.length > 0){
+    if ($('#CONNECT').val() == 'CONNEXION'){
+        var _username = $('#username').val();
+        var _password = $("#password").val();
+        if (_username.length > 0 && _username.includes('@') && _password.length > 0){
 
 
-        $.post("connexion.php", {mail: _username, password: _password}, function(data, textStatus) {
-            console.log(data);
-            if(data == 'user'){
-                $(".connexion-box").hide();
-            }
-            else{;
-                $("#username").val("");
-                $("#password").val("");
-                $(".wronguser").show();
-            }
-        });
+            $.post("connexion.php", {mail: _username, password: _password}, function(data, textStatus) {
+                console.log(data);
+                if(data != 'reset'){
+                    $(".connexion-box").hide();
+                    $('#CONNECT').val(data);
+                }
+                else{;
+                    $("#username").val("");
+                    $("#password").val("");
+                    $(".wronguser").show();
+                }
+            });
+        }
+        
+        else{
+            $("#username").val("");
+            $("#password").val("");
+            $(".wronguser").show();
+            stop()
+        }
     }
-    
     else{
-        $("#username").val("");
-        $("#password").val("");
-        $(".wronguser").show();
         stop()
     }
 })

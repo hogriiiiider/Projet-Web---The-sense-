@@ -12,12 +12,10 @@ if (isset($_POST['mail']) && isset($_POST['password'])){
     $stmt = $pdo->prepare('SELECT mail, password FROM USERS WHERE username = :mail');
     $stmt->bindparam(':mail', $mail);
     $stmt->execute()
-    
-    $tab = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if(tab){
-        if (password_verify($mdp, $tab['password'])){
-            echo 'user' ;
+    if($stmt->rowCount() > 0){
+        if (password_verify($mdp, $stmt['password'])){
+            echo $stmt['name'] ;
         }else{
             echo 'reset';
         }
