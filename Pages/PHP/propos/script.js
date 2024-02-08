@@ -11,3 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function afficherEmail(Message) {
+    var Message = document.getElementById("message").value;
+    var mail = 'trosselet@gaming.tech'
+    let mailto = `mailto:${mail}?subject=Écrivez le sujet de votre mail&body=${Message}`
+    location.href = mailto
+}
