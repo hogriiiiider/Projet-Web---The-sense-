@@ -1,9 +1,68 @@
+<?php
+    session_start();
+
+    $dsn = 'mysql:host=mysql-the-sense.alwaysdata.net;dbname=the-sense_bdd;charset=utf8';
+    $user = 'the-sense';
+    $password = 'the-sense-dr01te';
+    $pdo = new PDO($dsn, $user, $password);
+
+    if(isset($_POST['button'])){
+        // Vérification si les champs sont remplis
+        if(isset($_POST['name']) && isset($_POST['password']) && $_POST['name'] != "" && $_POST['password'] != ""){
+            // Récupération des valeurs du formulaire
+            $pseudo = $_POST['name'];
+            $password = $_POST['password'];
+
+            // Requête SQL pour vérifier les informations dans la base de données
+            $query = "SELECT * FROM `USERS` WHERE `mail` = :USERNAME AND `password` = :MDP";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':USERNAME', $pseudo);
+            $stmt->bindParam(':MDP', $password);
+            $stmt->execute();
+            $user = $stmt->fetch();
+
+            if($user){
+                // Si les informations sont correctes, rediriger vers index.php
+                $_SESSION['name'] = $pseudo;
+                $_SESSION['isConnected'] = true; // Ajout de la variable isConnected
+                header("Location: light_room.php");
+                exit();
+            } else {
+                // Si les informations sont incorrectes, afficher un message d'erreur
+                $error = "Pseudo ou mot de passe incorrect.";
+            }
+        } else {
+            // Si tous les champs ne sont pas remplis, afficher un message d'erreur
+            $error = "Veuillez remplir tous les champs.";
+        }
+    }
+
+    $nom = "";
+
+    if(isset($_SESSION['isConnected'])){
+        $pseudo = $_SESSION['name'];
+        $query2 = "SELECT name FROM `USERS` WHERE `mail` = :USERNAME";
+        $stmt2 = $pdo->prepare($query2);
+        $stmt2->bindParam(':USERNAME', $pseudo);
+        $stmt2->execute();
+        $user2 = $stmt2->fetch();
+        $nom = $user2['name'];
+    }
+
+    // Gérer la déconnexion
+    if(isset($_POST['logout'])){
+        session_destroy(); // Détruit la session actuelle
+        header("Location: light_room.php"); // Redirige vers la page d'accueil ou toute autre page de votre choix
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles.css">
         <title>Dark Room</title>
     </head>
 
@@ -26,53 +85,73 @@
                         <a id="CONNECT" href="#" >CONNEXION</a>
                     </div>
                 </div>
-                <div class="connexion-box">
-                    <h2>Connexion</h2>
-                    <div class="form-group">
-                        <label for="username">Identifiant</label>
-                        <input type="text" id="username" placeholder="Pseudonyme">
+                <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] === true): ?>
+                    <div class="connexion-box">
+                        <h2>Bonjour, <?php echo $nom; ?></h2>
+                        <p> Ma réservation </p>
+                        <p>Mes points</p>
+                        <a href="#">Paramtres du compte<a> <img>
+                        <form method="post" action="#">
+                            <button type="submit" name="logout">Déconnexion</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" placeholder="Mot de passe">
+                <?php else: ?>
+                    <div class="connexion-box">
+                        <h2>Connexion</h2>
+                        <form method="post" action="#">
+                            <div class="form-group">
+                                <label for="username">Identifiant</label>
+                                <input name="name" type="text" id="username" placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <input name="password" type="password" id="password" placeholder="Mot de passe">
+                            </div>
+                            <p class="error">
+                                <?php if(isset($error)) echo $error; ?>
+                            </p>
+                            <div class="footer">
+                                <div class="account-options">
+                                    <a href="../inscription/index.php">Créer un compte</a>
+                                    <a href="#" class="password-reset">Mot de passe oublié ?</a>
+                                </div>
+                                <button class="connexion-btn" name="button" type="submit"><span>Connexion</span></button>
+                            </div>
+                        </form>
                     </div>
-                    <p class="wronguser">Mauvais identifiant ou mot de passe</p>
-                    <div class="footer">
-                        <div class="account-options">
-                            <a href="../inscription/index.php">Créer un compte</a>
-                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
-                        </div>
-                        <button class="connexion-btn"><span>Connexion</span></button>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
 
         <div class="logo_room">
-            <span><a href="../darkroom/dark_room.html"><img class="dark_room" src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="Logo_Dark_Room"></a></span>
-            <span><a href="../battleroom/battle_room.html"><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM LOGO LIGHT.svg" alt="Logo_Battle_Room"></a></span>
-            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE LOGO LIGHT.svg" alt="Logo_Creative_Room"></a>
+            <span><a href="../lightroom/light_room.html"><img class="dark_room" src="../../../Assets/Images/Icones/LIGHT ROOM en blanc.svg" alt="Logo_Light_Room"></a></span>
+            <span><a href="../battleroom/battle_room.html"><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM.svg" alt="Logo_Battle_Room"></a></span>
+            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE en blanc.svg" alt="Logo_Creative_Room"></a>
         </div>
         
-        <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
+        <img class="light_room" src="../../../Assets/Images/Icones/DARK ROOM (1).svg" alt="Logo_Light_Room">
 
         <div>
-            <a href="#shangri"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
+            <a href="#conjuring"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
         </div> 
 
         <div class="description" id="description">
-            <img class="description-button-video" src="../../../Assets/Images/Picture/VIDEO LIGHT ROOM.svg" alt="image pour la video" onclick="openVideo()">
+            <img class="description-button-video" src="../../../Assets/Images/Picture/VIDEO DARK ROOM.svg" alt="image pour la video" onclick="openVideo()">
             <div class="description-text">
                 <div class="description-text2">
-                    <h1>QU'EST CE QUE LA <img class="logo-description" src="../../../Assets/Images/Icones/LIGHT ROOM mini.svg" alt="logo DARK ROOM blanc"> ?</h1>
+                    <h1>QU'EST CE QUE LA <img class="logo-description" src="../../../Assets/Images/Icones/DARK ROOM en blanc (logo titre).svg" alt="logo DARK ROOM blanc"> ?</h1>
                 </div>
                 <div class="description-explication">
                     <p>
-                        Voyagez, explorez, découvrez LIGHT ROOM ! 
-                        Découvrez des paysages somptueux et des histoires palpipante dans cette salle accessible pour toute la famille. 
-                        Ici tout n’est qu’affaire d’émotions et de beauté, explorer les décors de nos expériences et partez à l’aventure 
-                        en famille ou entre amis à partir de 12 ans. Il ne vous reste plus qu’à franchir le seuil de la LIGHT ROOM 
-                        et à vous laissez transporter dans un voyage époustouflant. Vos émotions n’attendent que vous !
+                        Vous pensez ne pas avoir peur du noir ? Que rien ne pourra vous effrayer ? Vous avez tord.
+                        Avec la DARK ROOM, toutes vos peurs deviendront réelles et en rien de temps, 
+                        il ne vous restera plus que vos jambes pour vous enfuir. 
+                        Vous vous penser suffisamment fort pour affronter vos peurs ? 
+                        Franchissez donc le seuil de la DARK ROOM. 
+                        Vous avez hâte d’y entrer mais dans le noir... 
+                        Personne ne vous verra mourir.
+
+                        <p id="warning">Les expériences proposées dans cette salle ne conviennent pas à un public mineur ou sensible.</p>
                     </p>
                 </div>
             </div>
@@ -86,49 +165,51 @@
 
         <div class="page">
             <div class="TheReality">
-                <h1>PRENEZ PART AU VOYAGE</h1>
+                <h1>REVEILLEZ LA PEUR QUI SOMMEILLE EN VOUS</h1>
             </div>
             
-            <div class="les-experience-image-shangri" id="shangri">
-                <img class="img-shangri" src="../../../Assets/Images/Picture/Shangri-la.png" alt="dark">
-                <div class="les-experience-shangri">
+            <div class="les-experience-image-dark" id="conjuring">
+                <img class="img-dark" src="../../../Assets/Images/Picture/the conjuring exp.png" alt="dark">
+                <div class="les-experience-dark">
                     <div class="les-experience-battle-title">
-                        <h1>SHANGRI-LA : LA CITÉ PERDUE DE Z</h1>
-                        <img src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="battle room">
+                        <h1>THE CONJURING EXPERIENCE</h1>
+                        <img src="../../../Assets/Images/Icones/DARK ROOM en gris.svg" alt="battle room">
                     </div>
-                    <div class="les-experience-shangri-texte">
+                    <div class="les-experience-dark-texte">
+                        <p id="warning">Expérience interdite aux -18</p>
                         <p>
-                            Shangri-La la cité mythique, symbole de paix, de prospérité et de magnificence. Personne n'a apparemment pu se rendre en ce lieu
-                            depuis des décennies ou prouver son existence, du moins depuis votre découverte ! Aventurez-vous au plus profond des légendes,
-                            entrez dans la cité de Z avec votre équipe et explorez les lieux à la recherche de Percy Fawcett.
+                            Revivez l'histoire d'un chef d'oeuvre cinématographique au travers d’une expérience aussi bien réaliste qu'immersive. Rassemblez
+                            ce qu'il vous reste de courage, les inspecteurs Ed et Loren Warren ont besoin de vous. Un malheur hante la maison de ces
+                            derniers et vous ne pouvez vous en échapper sans sacrifices. Serez-vous à la hauteur de ce qui vous attend ? Bonne chance,
+                            vous en aurez besoin !
                         </p>
                     </div>
-                    <div class="les-experience-reservation-shangri">
-                        <img id="reserv_1" src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="open_reserv()">
+                    <div class="les-experience-reservation-dark">
+                        <img id="reserv_1" src="../../../Assets/Images/Bouton/Bouton réserver (Blanc).svg" onclick="open_reserv()">
                     </div>
                 </div>
             </div>
 
-            <div class="les-experience-image-shangri-2">
-                <img class="img-shangri" src="../../../Assets/Images/Picture/Nordeenn.png" alt="dark">
-                <div class="les-experience-shangri">
+            <div class="les-experience-image-dark-2">
+                <img class="img-dark" src="../../../Assets/Images/Picture/nameless.png" alt="dark">
+                <div class="les-experience-dark">
                     <div class="les-experience-battle-title">
-                        <h1>NORDRËNN : LA LÉGENDE DE GLACE</h1>
-                        <img src="../../../Assets/Images/Icones/LIGHT ROOM 1.svg" alt="battle room">
+                        <h1>NAMELESS</h1>
+                        <img src="../../../Assets/Images/Icones/DARK ROOM en gris.svg" alt="battle room">
                     </div>
-                    <div class="les-experience-shangri-texte">
+                    <div class="les-experience-dark-texte">
+                        <p id="warning">Expérience interdite aux -18</p>
                         <p>
-                            Dans le froid du royaume de Nordrënn, 
-                            il est une légende qui raconte comment un guerrier obtint la force de l’ours et la clairvoyance du corbeau. 
-                            Il est dit que pour conquérir la femme qu’il aimait, cet homme parti à la recherche du trône d’Odin, 
-                            artefact perdu depuis des années, qui offrait, disait-on, le pouvoir du Père de Toute Chose. 
-                            Le guerrier parti et ne revint jamais ; on raconte qu’il aurait trouvé le trône mais, 
-                            qu’avide de son pouvoir il ne le quitta plus. 
-                            Partez à la découverte du royaume glacé de Nordrënn et retrouvez le guerrier de la légende.
+                            De retour de soirée avec vos amis, votre voiture tombe soudainement en panne au beau milieu des bois. 
+                            Coïncidence, c’est dans cette forêt que l’on a signalé de mystérieuses disparitions. 
+                            Après un long moment à tenter d’appeller une dépanneuse, 
+                            vous vous rendez compte que vous ne pouvez compter que sur vous-même pour vous en sortir. 
+                            Mais dans le froid de la nuit et les recoins de la forêt, quelque chose rôde. 
+                            Travaillez en équipe car sans vos amis, vous n’aurez aucune chance, survivrez-vous assez longtemps ?
                         </p>
                     </div>
-                    <div class="les-experience-reservation-shangri">
-                        <img id="reserv_2" src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="open_reserv()">
+                    <div class="les-experience-reservation-dark">
+                        <img id="reserv_2" src="../../../Assets/Images/Bouton/Bouton réserver (Blanc).svg" onclick="open_reserv()">
                     </div>
                 </div>
             </div>

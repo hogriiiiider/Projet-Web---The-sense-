@@ -1,59 +1,10 @@
 <?php
-
     session_start();
 
     $dsn = 'mysql:host=mysql-the-sense.alwaysdata.net;dbname=the-sense_bdd;charset=utf8';
     $user = 'the-sense';
     $password = 'the-sense-dr01te';
     $pdo = new PDO($dsn, $user, $password);
-
-    if(isset($_POST['button'])){
-        // Vérification si tous les champs sont remplis
-        if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password']) &&
-           $_POST['email'] != "" && $_POST['username'] != "" && $_POST['password'] != "" && $_POST['confirm_password'] != ""){
-
-            // Vérification si les deux mots de passe correspondent
-            if($_POST['password'] == $_POST['confirm_password']){
-                // Récupération des valeurs du formulaire
-                $email = $_POST['email'];
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-
-
-                // Connexion à la base de données (remplacez ces valeurs par les vôtres)
-                
-
-                // Vérification si le nom d'utilisateur existe déjà
-                $query_check_username = "SELECT * FROM `USERS` WHERE `name` = :USERNAME";
-                $stmt_check_username = $pdo->prepare($query_check_username);
-                $stmt_check_username->bindParam(':USERNAME', $username);
-                $stmt_check_username->execute();
-
-                if($stmt_check_username->rowCount() == 0){
-                    // Nom d'utilisateur disponible, procéder à l'insertion dans la base de données
-                    $query = "INSERT INTO `USERS` (`mail`, `name`, `password`) VALUES (:MAIL, :USERNAME, :MDP)";
-                    $stmt = $pdo->prepare($query);
-                    $stmt->bindParam(':MAIL', $email);
-                    $stmt->bindParam(':USERNAME', $username);
-                    $stmt->bindParam(':MDP', $password);
-                    $stmt->execute();
-
-                    // Redirection vers login.php après l'enregistrement
-                    header("Location: acceuil/index.php");
-                    exit();
-                } else {
-                    // Nom d'utilisateur déjà pris, afficher un message d'erreur
-                    $error = "Ce nom d'utilisateur est déjà pris. Veuillez en choisir un autre.";
-                }
-            } else {
-                // Les mots de passe ne correspondent pas, afficher un message d'erreur
-                $error = "Les mots de passe ne correspondent pas.";
-            }
-        } else {
-            // Si tous les champs ne sont pas remplis, afficher un message d'erreur
-            $error = "Veuillez remplir tous les champs.";
-        }
-    }
 
     if(isset($_POST['button'])){
         // Vérification si les champs sont remplis
@@ -111,11 +62,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>register</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Dark Room 2 </title>
 </head>
 <body>
-    <header>
+    
+<div> <img class="BG" src="../../../Assets/Images/Design/Vector 78 (1).svg"></div>
+    <div class="layout_1">
     <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
@@ -169,66 +122,84 @@
                 <?php endif; ?>
             </div>
         </div>
+
+        <div class="logo_room">
+            <span><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM.svg" alt="Logo_Dark_Room"></span>
+            <span><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE en blanc.svg" alt="Logo_Battle_Room"></span>
+            <span><img src="../../../Assets/Images/Icones/LIGHT ROOM en blanc.svg" alt="Logo_Creative_Room"></span>
+        </div>
         
-        <h1>MON COMPTE</h1>
-    </header>
-<!--partie enregistrement-->
-    <section>
-        <form action="#" method="POST">
-            <div class="title">
-                <h2>Créer un compte</h2>
-            </div>
-            <div id="register">
-                <div class="text">
-                    <h3>Nom prénom</h3>
-                    <h3>Adresse mail</h3>
-                    <h3>Mot de passe</h3>
-                    <h3>Confirmer le mot de passe</h3>
-                </div>
-                <div class="input">
-                    <p class="error">
-                        <?php if(isset($error)) echo $error; ?>
-                    </p>
-                    <input type="text" name="username" id="name">
-                    <input type="email" name="email" id="mail">
-                    <input type="password" name="password" id="newpassword">
-                    <input type="password" name="confirm_password" id="confirmpassword">
-                </div>
-            </div>
-            <div class="finSection1">
-                <button name="button" type="submit">Valider</button>
-            </div>
-        </form>
-    </section>
-    <div class="finSection2">
-        <input type="checkbox"> se désabonner de la news letter
+        <img class="light_room" src="../../../Assets/Images/Icones/DARK ROOM en blanc.svg" alt="Logo_Light_Room">
+        <button class="discover-button"> Découvrir </button>
     </div>
-<!--partie contact-->
-   
+
+    <div class="description_white">
+        <button class="description-button-video-darkroom"><img class="description-video-triangle" src="../../../Assets/Images/Picture/Polygon 3.svg"></button>
+        <div class="description-text">
+            <div class="description-text2">
+                <h1 class="description_color">QU'EST CE QUE <img class="logo-description" src="../../../Assets/Images/Icones/DARK ROOM en blanc (logo titre).svg" alt="logo secondaire the sense"> ?</h1>
+            </div>
+            <div class="description-explication">
+                <p class="description_color">
+                    Vous pensez ne pas avoir peur du noir ? Que rien ne pourra vous effrayer ? Vous avez tord.
+                    Avec la DARK ROOM, 
+                    toutes vos peurs deviendront réelles et en rien de temps, il ne 
+                    vous restera plus que vos jambes pour vous enfuir. Vous vous penser suffisamment
+                    fort pour affronter vos peurs ? Franchissez donc le seuil de la DARK ROOM. Vous avez
+                    hâte d’y entrer mais dans le noir... Personne ne vous verra mourir.
+                </p>
+                <p class="color_info">
+                    *Les expériences proposées dans cette salle ne conviennent pas à un public mineur ou sensible.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="description-experience">
+        <img class="BG" src="../../../Assets/Images/Design/Vector 80 RED.svg">
+        <div class="layout_2">
+            <div class="experience">
+                <button class="discover-retour"> RETOUR </button>  
+                    <img class="dark_room_minia" src="../../../Assets/Images/Picture/Minia dark room 2.png" alt="miniature">    
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="left">
+            <a href="#">Nous contacter</a>
+            <span><a href="#">Réservations</a></span>
+            <span><a href="#">FAQ</a></span>
+        </div>
+        <div class="center">
+            <a href="#"><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
+        </div>
+        <div class="right">
+            <div class="txt">
+                <a href="#">Modalités</a>
+                <span>|</span>
+                <span><a href="#">Politique de confidentialité</a></span>
+            </div>
+            <div class="img">
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
+                <span><a href="#"><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
+            </div>
+        </div>
+    </footer>
+
+    <!--JQuery-->
+    <script src="../../jquery.js"></script>
+    <!--JavaScript-->
+    <script type="text/javascript" src="script.js"></script>
+
 </body>
-<footer>
-    <div class="left">
-        <a>Nous contacter</a>
-        <span><a>Réservations</a></span>
-        <span><a>FAQ</a></span>
-    </div>
-    <div class="center">
-        <a><img src="../../../Assets/Images/Icones/Vector.svg">THE SENSE, SAS. Tous droits réservés</a>
-    </div>
-    <div class="right">
-        <div class="txt">
-            <a>Modalités</a>
-            <span>|</span>
-            <span><a>Politique de confidentialité</a></span>
-        </div>
-        <div class="img">
-            <span><a><img src="../../../Assets/Images/Icones/Youtube.svg"></a></span>
-            <span><a><img src="../../../Assets/Images/Icones/Instagram.svg"></a></span>
-            <span><a><img src="../../../Assets/Images/Icones/Twitter.svg"></a></span>
-            <span><a><img src="../../../Assets/Images/Icones/Facebook.svg"></a></span>
-        </div>
-    </div>
-</footer>
-<script src="../../jquery.js"></script>
-<script type="text/javascript" src="../script.js"></script>
+
 </html>
+
+
+<div>
+    <img src="../../../Assets/Images/Picture/Minia dark room 2.png" alt="miniature">
+</div>

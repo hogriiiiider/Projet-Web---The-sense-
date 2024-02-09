@@ -1,3 +1,62 @@
+<?php
+    session_start();
+
+    $dsn = 'mysql:host=mysql-the-sense.alwaysdata.net;dbname=the-sense_bdd;charset=utf8';
+    $user = 'the-sense';
+    $password = 'the-sense-dr01te';
+    $pdo = new PDO($dsn, $user, $password);
+
+    if(isset($_POST['button'])){
+        // Vérification si les champs sont remplis
+        if(isset($_POST['name']) && isset($_POST['password']) && $_POST['name'] != "" && $_POST['password'] != ""){
+            // Récupération des valeurs du formulaire
+            $pseudo = $_POST['name'];
+            $password = $_POST['password'];
+
+            // Requête SQL pour vérifier les informations dans la base de données
+            $query = "SELECT * FROM `USERS` WHERE `mail` = :USERNAME AND `password` = :MDP";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':USERNAME', $pseudo);
+            $stmt->bindParam(':MDP', $password);
+            $stmt->execute();
+            $user = $stmt->fetch();
+
+            if($user){
+                // Si les informations sont correctes, rediriger vers index.php
+                $_SESSION['name'] = $pseudo;
+                $_SESSION['isConnected'] = true; // Ajout de la variable isConnected
+                header("Location: light_room.php");
+                exit();
+            } else {
+                // Si les informations sont incorrectes, afficher un message d'erreur
+                $error = "Pseudo ou mot de passe incorrect.";
+            }
+        } else {
+            // Si tous les champs ne sont pas remplis, afficher un message d'erreur
+            $error = "Veuillez remplir tous les champs.";
+        }
+    }
+
+    $nom = "";
+
+    if(isset($_SESSION['isConnected'])){
+        $pseudo = $_SESSION['name'];
+        $query2 = "SELECT name FROM `USERS` WHERE `mail` = :USERNAME";
+        $stmt2 = $pdo->prepare($query2);
+        $stmt2->bindParam(':USERNAME', $pseudo);
+        $stmt2->execute();
+        $user2 = $stmt2->fetch();
+        $nom = $user2['name'];
+    }
+
+    // Gérer la déconnexion
+    if(isset($_POST['logout'])){
+        session_destroy(); // Détruit la session actuelle
+        header("Location: light_room.php"); // Redirige vers la page d'accueil ou toute autre page de votre choix
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,27 +83,44 @@
                         <a id="CONNECT" href="#" >CONNEXION</a>
                     </div>
                 </div>
-                <div class="connexion-box">
-                    <h2>Connexion</h2>
-                    <div class="form-group">
-                        <label for="username">Identifiant</label>
-                        <input type="text" id="username" placeholder="Pseudonyme">
+                <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] === true): ?>
+                    <div class="connexion-box">
+                        <h2>Bonjour, <?php echo $nom; ?></h2>
+                        <p> Ma réservation </p>
+                        <p>Mes points</p>
+                        <a href="#">Paramtres du compte<a> <img>
+                        <form method="post" action="#">
+                            <button type="submit" name="logout">Déconnexion</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" placeholder="Mot de passe">
+                <?php else: ?>
+                    <div class="connexion-box">
+                        <h2>Connexion</h2>
+                        <form method="post" action="#">
+                            <div class="form-group">
+                                <label for="username">Identifiant</label>
+                                <input name="name" type="text" id="username" placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <input name="password" type="password" id="password" placeholder="Mot de passe">
+                            </div>
+                            <p class="error">
+                                <?php if(isset($error)) echo $error; ?>
+                            </p>
+                            <div class="footer">
+                                <div class="account-options">
+                                    <a href="../inscription/index.php">Créer un compte</a>
+                                    <a href="#" class="password-reset">Mot de passe oublié ?</a>
+                                </div>
+                                <button class="connexion-btn" name="button" type="submit"><span>Connexion</span></button>
+                            </div>
+                        </form>
                     </div>
-                    <p class="wronguser">Mauvais identifiant ou mot de passe</p>
-                    <div class="footer">
-                        <div class="account-options">
-                            <a href="Projet-Web---The-sense-\Pages\PHP\inscription\index.php">Créer un compte</a>
-                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
-                        </div>
-                        <button class="connexion-btn"><span>Connexion</span></button>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
+        
         <h1>LES NEWS</h1>
     </header>
 

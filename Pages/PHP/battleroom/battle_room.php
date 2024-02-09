@@ -1,10 +1,69 @@
+<?php
+    session_start();
+
+    $dsn = 'mysql:host=mysql-the-sense.alwaysdata.net;dbname=the-sense_bdd;charset=utf8';
+    $user = 'the-sense';
+    $password = 'the-sense-dr01te';
+    $pdo = new PDO($dsn, $user, $password);
+
+    if(isset($_POST['button'])){
+        // Vérification si les champs sont remplis
+        if(isset($_POST['name']) && isset($_POST['password']) && $_POST['name'] != "" && $_POST['password'] != ""){
+            // Récupération des valeurs du formulaire
+            $pseudo = $_POST['name'];
+            $password = $_POST['password'];
+
+            // Requête SQL pour vérifier les informations dans la base de données
+            $query = "SELECT * FROM `USERS` WHERE `mail` = :USERNAME AND `password` = :MDP";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(':USERNAME', $pseudo);
+            $stmt->bindParam(':MDP', $password);
+            $stmt->execute();
+            $user = $stmt->fetch();
+
+            if($user){
+                // Si les informations sont correctes, rediriger vers index.php
+                $_SESSION['name'] = $pseudo;
+                $_SESSION['isConnected'] = true; // Ajout de la variable isConnected
+                header("Location: light_room.php");
+                exit();
+            } else {
+                // Si les informations sont incorrectes, afficher un message d'erreur
+                $error = "Pseudo ou mot de passe incorrect.";
+            }
+        } else {
+            // Si tous les champs ne sont pas remplis, afficher un message d'erreur
+            $error = "Veuillez remplir tous les champs.";
+        }
+    }
+
+    $nom = "";
+
+    if(isset($_SESSION['isConnected'])){
+        $pseudo = $_SESSION['name'];
+        $query2 = "SELECT name FROM `USERS` WHERE `mail` = :USERNAME";
+        $stmt2 = $pdo->prepare($query2);
+        $stmt2->bindParam(':USERNAME', $pseudo);
+        $stmt2->execute();
+        $user2 = $stmt2->fetch();
+        $nom = $user2['name'];
+    }
+
+    // Gérer la déconnexion
+    if(isset($_POST['logout'])){
+        session_destroy(); // Détruit la session actuelle
+        header("Location: light_room.php"); // Redirige vers la page d'accueil ou toute autre page de votre choix
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <title>Dark Room</title>
+        <title>Battle Room</title>
     </head>
 
 
@@ -26,57 +85,66 @@
                         <a id="CONNECT" href="#" >CONNEXION</a>
                     </div>
                 </div>
-                <div class="connexion-box">
-                    <h2>Connexion</h2>
-                    <div class="form-group">
-                        <label for="username">Identifiant</label>
-                        <input type="text" id="username" placeholder="Pseudonyme">
+                <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] === true): ?>
+                    <div class="connexion-box">
+                        <h2>Bonjour, <?php echo $nom; ?></h2>
+                        <p> Ma réservation </p>
+                        <p>Mes points</p>
+                        <a href="#">Paramtres du compte<a> <img>
+                        <form method="post" action="#">
+                            <button type="submit" name="logout">Déconnexion</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Mot de passe</label>
-                        <input type="password" id="password" placeholder="Mot de passe">
+                <?php else: ?>
+                    <div class="connexion-box">
+                        <h2>Connexion</h2>
+                        <form method="post" action="#">
+                            <div class="form-group">
+                                <label for="username">Identifiant</label>
+                                <input name="name" type="text" id="username" placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <input name="password" type="password" id="password" placeholder="Mot de passe">
+                            </div>
+                            <p class="error">
+                                <?php if(isset($error)) echo $error; ?>
+                            </p>
+                            <div class="footer">
+                                <div class="account-options">
+                                    <a href="../inscription/index.php">Créer un compte</a>
+                                    <a href="#" class="password-reset">Mot de passe oublié ?</a>
+                                </div>
+                                <button class="connexion-btn" name="button" type="submit"><span>Connexion</span></button>
+                            </div>
+                        </form>
                     </div>
-                    <p class="wronguser">Mauvais identifiant ou mot de passe</p>
-                    <div class="footer">
-                        <div class="account-options">
-                            <a href="Projet-Web---The-sense-\Pages\PHP\inscription\index.php">Créer un compte</a>
-                            <a href="#" class="password-reset">Mot de passe oublié ?</a>
-                        </div>
-                        <button class="connexion-btn"><span>Connexion</span></button>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
 
         <div class="logo_room">
-            <span><a href="../lightroom/light_room.html"><img class="dark_room" src="../../../Assets/Images/Icones/LIGHT ROOM en blanc.svg" alt="Logo_Light_Room"></a></span>
-            <span><a href="../battleroom/battle_room.html"><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM.svg" alt="Logo_Battle_Room"></a></span>
-            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE en blanc.svg" alt="Logo_Creative_Room"></a>
+            <span><a href="../lightroom/light_room.html"><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_Light_Room"></a></span>
+            <span><a href="../darkroom/dark_room.html"><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></a></span>
+            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="image/LITTLE-CREATIVE.svg" alt="Logo_Creative_Room"></a>
         </div>
         
-        <img class="light_room" src="../../../Assets/Images/Icones/DARK ROOM (1).svg" alt="Logo_Light_Room">
+        <img class="light_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Light_Room">
 
         <div>
-            <a href="#conjuring"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
+            <a href="#ultimate"><button class="button_anim discover-button">DÉCOUVRIR</button></a>
         </div> 
 
         <div class="description" id="description">
-            <img class="description-button-video" src="../../../Assets/Images/Picture/VIDEO DARK ROOM.svg" alt="image pour la video" onclick="openVideo()">
+            <img class="description-button-video" src="image/IMAGE-VIDEO-BATTLE.svg" alt="image pour la video" onclick="openVideo()">
             <div class="description-text">
                 <div class="description-text2">
-                    <h1>QU'EST CE QUE LA <img class="logo-description" src="../../../Assets/Images/Icones/DARK ROOM en blanc (logo titre).svg" alt="logo DARK ROOM blanc"> ?</h1>
+                    <h1>QU'EST CE QUE <img class="logo-description" src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="logo secondaire the sense"> ?</h1>
                 </div>
                 <div class="description-explication">
                     <p>
-                        Vous pensez ne pas avoir peur du noir ? Que rien ne pourra vous effrayer ? Vous avez tord.
-                        Avec la DARK ROOM, toutes vos peurs deviendront réelles et en rien de temps, 
-                        il ne vous restera plus que vos jambes pour vous enfuir. 
-                        Vous vous penser suffisamment fort pour affronter vos peurs ? 
-                        Franchissez donc le seuil de la DARK ROOM. 
-                        Vous avez hâte d’y entrer mais dans le noir... 
-                        Personne ne vous verra mourir.
-
-                        <p id="warning">Les expériences proposées dans cette salle ne conviennent pas à un public mineur ou sensible.</p>
+                        Vous cherchez à connaitre qui est le meilleur dans la famille ou qui fera le S.A.M ce
+                        soir ? Venez régler vos comptes dans la BATTLE ROOM par équipe de 1 à 4 joueurs soit 8 joueurs au maximum. Au travers de nos différents modes de jeux, prouvez votre courage et montrez qu’au reste du monde que vous êtes le meilleur. Battez tous les records, faites ressortirvotre côté compétitif et pas de quartier ! N'attendez plus et rejoignez l’arène, pour prouver que vous serez le prochain champion de THE SENSE.
                     </p>
                 </div>
             </div>
@@ -90,84 +158,80 @@
 
         <div class="page">
             <div class="TheReality">
-                <h1>REVEILLEZ LA PEUR QUI SOMMEILLE EN VOUS</h1>
+                <h1>DÉFIEZ VOS ADVERSAIRES</h1>
             </div>
             
-            <div class="les-experience-image-dark" id="conjuring">
-                <img class="img-dark" src="../../../Assets/Images/Picture/the conjuring exp.png" alt="dark">
-                <div class="les-experience-dark">
+            <div class="les-experience-image-shangri" id="ultimate">
+                <img class="img-shangri" src="image/image-3.jpg" alt="Shangri">
+                <div class="les-experience-shangri">
                     <div class="les-experience-battle-title">
-                        <h1>THE CONJURING EXPERIENCE</h1>
-                        <img src="../../../Assets/Images/Icones/DARK ROOM en gris.svg" alt="battle room">
+                        <h1>ULTIMATE FIGHT</h1>
+                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
                     </div>
-                    <div class="les-experience-dark-texte">
-                        <p id="warning">Expérience interdite aux -18</p>
+                    <div class="les-experience-shangri-texte">
                         <p>
-                            Revivez l'histoire d'un chef d'oeuvre cinématographique au travers d’une expérience aussi bien réaliste qu'immersive. Rassemblez
-                            ce qu'il vous reste de courage, les inspecteurs Ed et Loren Warren ont besoin de vous. Un malheur hante la maison de ces
-                            derniers et vous ne pouvez vous en échapper sans sacrifices. Serez-vous à la hauteur de ce qui vous attend ? Bonne chance,
-                            vous en aurez besoin !
+                            Sentez votre cœur battre, votre souffle se couper, votre concentration monter... Enrôlez des joueurs, formez votre équipe et
+                            préparez vous au combat ! Arrachez la victoire à vos adversaires à travers une bataille dans des décors et des "maps" des
+                            plus immersives. En équipe de 4 ou 5 voyez lesquels d’entre vous sont digne de remporter le trophée.
                         </p>
                     </div>
-                    <div class="les-experience-reservation-dark">
-                        <img id="reserv_1" src="../../../Assets/Images/Bouton/Bouton réserver (Blanc).svg" onclick="open_reserv()">
+                    <div class="les-experience-reservation-shangri">
+                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="open_reserv()">
                     </div>
                 </div>
             </div>
 
-            <div class="les-experience-image-dark-2">
-                <img class="img-dark" src="../../../Assets/Images/Picture/nameless.png" alt="dark">
-                <div class="les-experience-dark">
+            <div class="les-experience-image-shangri-2">
+                <img class="img-shangri" src="image/image-4.jpg" alt="Shangri">
+                <div class="les-experience-shangri">
                     <div class="les-experience-battle-title">
-                        <h1>NAMELESS</h1>
-                        <img src="../../../Assets/Images/Icones/DARK ROOM en gris.svg" alt="battle room">
+                        <h1>GARDEN WAR</h1>
+                        <img src="image/BATTLEROOM-LOGO-DISCOVER.svg" alt="battle room">
                     </div>
-                    <div class="les-experience-dark-texte">
-                        <p id="warning">Expérience interdite aux -18</p>
+                    <div class="les-experience-shangri-texte">
                         <p>
-                            De retour de soirée avec vos amis, votre voiture tombe soudainement en panne au beau milieu des bois. 
-                            Coïncidence, c’est dans cette forêt que l’on a signalé de mystérieuses disparitions. 
-                            Après un long moment à tenter d’appeller une dépanneuse, 
-                            vous vous rendez compte que vous ne pouvez compter que sur vous-même pour vous en sortir. 
-                            Mais dans le froid de la nuit et les recoins de la forêt, quelque chose rôde. 
-                            Travaillez en équipe car sans vos amis, vous n’aurez aucune chance, survivrez-vous assez longtemps ?
+                            Partez au front, avec vos amis ou votre famille, découvrez un univers certes plus cartoonesque mais ne vous y méprenez pas, vos ennemies vous attendent. Vous avez pour objectifs de remporter les batailles ! Munissez vous de vos plus fidèles soldats et partez en guerre. Cette expérience en équipe de 4-5 joueurs vous propose de découvrir l'univers cartoonesque mais compétitif de notre nouvelle room. Qu'attendez-vous soldat ?
                         </p>
                     </div>
-                    <div class="les-experience-reservation-dark">
-                        <img id="reserv_2" src="../../../Assets/Images/Bouton/Bouton réserver (Blanc).svg" onclick="open_reserv()">
+                    <div class="les-experience-reservation-shangri">
+                        <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div class="carroussel">
+                    <img class="img_carroussel" id="img_carroussel" src="">
+                    <div class="next">
+                        <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
+                        <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
+                    </div>
+                    <div class="txt_carroussel">
+                        <p id="txt_carroussel">
+        
+                        </p>
+                    </div>
+                    <div class="rectangles">
+                        <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
+                        <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-        <div class="carroussel">
-            <img class="img_carroussel" id="img_carroussel" src="">
-            <div class="next">
-                <img id="precedent" src="../../../Assets/Images/Icones/Cercle 1.svg">
-                <img id="suivant" src="../../../Assets/Images/Icones/Cercle 2.svg">
-            </div>
-            <div class="txt_carroussel">
-                <p id="txt_carroussel">
-
-                </p>
-            </div>
-            <div class="rectangles">
-                <img id="rect1" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect2" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect3" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect4" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-                <img id="rect5" src="../../../Assets/Images/Picture/Rectangle 128.svg">
-            </div>
-        </div>
         <div class="reservation">
             <div class="retour">
-                <p onclick="close_reserv()"> << RETOUR</p>
+                <p onclick="close_reserv()">RETOUR</p>
             </div>
 
             <div class="image-reserv">
-                <img id="reserv_img" src="" alt="IMAGE RESERVATION">
+                <img src="../../../Assets/Images/Picture/img-battleroom-reserv.jpg" alt="IMAGE RESERVATION">
             </div>
 
             <div class="planning-reservation">
