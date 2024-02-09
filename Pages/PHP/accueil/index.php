@@ -69,13 +69,13 @@
     <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
+                    <a href="../accueil/index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
-                        <a href="../news/news.html">NEWS</a>
-                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
-                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../news/news.php">NEWS</a>
+                        <a href="../lightroom/light_room.php">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.php">À PROPOS DE NOUS</a>
                         <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
                     <div class="CONNECT" >
@@ -144,10 +144,10 @@
                 </div>
                 <div class="description-redirection">
                     <div class="description-text3">
-                        <a href="../propos/à_propos.html">
+                        <a href="../propos/à_propos.php">
                             DÉCOUVREZ THE SENSE 
                         </a>
-                        <a href="../propos/à_propos.html"><img class="description-arrow" src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                        <a href="../propos/à_propos.php"><img class="description-arrow" src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                     </div>
                 </div>
             </div>
@@ -181,10 +181,10 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <a href="../lightroom/light_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
+                        <a href="../lightroom/light_room.php"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
-                            <a class="text-lightroom" href="../lightroom/light_room.html">DÉCOUVREZ LA LIGHT ROOM</a>
-                            <a class="description-arrow-2" href="../lightroom/light_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                            <a class="text-lightroom" href="../lightroom/light_room.php">DÉCOUVREZ LA LIGHT ROOM</a>
+                            <a class="description-arrow-2" href="../lightroom/light_room.php"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                         </div>
                     </div>
                 </div>
@@ -207,10 +207,10 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <a href="../darkroom/dark_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
+                        <a href="../darkroom/dark_room.php"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
-                            <a class="text-lightroom" href="../darkroom/dark_room.html">DÉCOUVREZ LA DARK ROOM</a>
-                            <a class="description-arrow-2" href="../darkroom/dark_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                            <a class="text-lightroom" href="../darkroom/dark_room.php">DÉCOUVREZ LA DARK ROOM</a>
+                            <a class="description-arrow-2" href="../darkroom/dark_room.php"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                         </div>
                     </div>
                 </div>
@@ -231,10 +231,10 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <a href="../battleroom/battle_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
+                        <a href="../battleroom/battle_room.php"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
-                            <a class="text-lightroom" href="../battleroom/battle_room.html">DÉCOUVREZ LA BATTLE ROOM</a>
-                            <a class="description-arrow-2" href="../battleroom/battle_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                            <a class="text-lightroom" href="../battleroom/battle_room.php">DÉCOUVREZ LA BATTLE ROOM</a>
+                            <a class="description-arrow-2" href="../battleroom/battle_room.php"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                         </div>
                     </div>
                 </div>
@@ -253,10 +253,10 @@
                         </p>
                     </div>
                     <div class="les-experience-reservation-shangri">
-                        <a href="../creativeroom/creative_room.html"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
+                        <a href="../creativeroom/creative_room.php"><img src="../../../Assets/Images/Bouton/Bouton réserver.svg"></a>
                         <div class="lightroom">
-                            <a class="text-lightroom" href="../creativeroom/creative_room.html">DÉCOUVREZ LA CREATIVE ROOM</a>
-                            <a class="description-arrow-2" href="../creativeroom/creative_room.html"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
+                            <a class="text-lightroom" href="../creativeroom/creative_room.php">DÉCOUVREZ LA CREATIVE ROOM</a>
+                            <a class="description-arrow-2" href="../creativeroom/creative_room.php"><img src="image/iconfinder_Arrows_thin_arrow_direction_right_6578850 1.svg" alt="flèche"></a>
                         </div>
                     </div>
                 </div>
@@ -327,15 +327,15 @@
 
 
         <div class="planning">
-            <div class="planning-date" id="week-range">
-                <img src="image/Layer 2.svg" alt="flèche mois précedent" id="prev-week">
+            <div class="planning-date" id="week-range6">
+                <img src="image/Layer 2.svg" alt="flèche mois précedent" id="prev-week6">
                 <p>
-                    DU <span id="start-day">15</span> AU <span id="end-day">20</span> <span id="end-month">DÉCEMBRE</span>
+                    DU <span id="start-day6">15</span> AU <span id="end-day6">20</span> <span id="end-month6">DÉCEMBRE</span>
                 </p>
-                <img src="image/Layer 3.svg" alt="flèche mois suivant" id="next-week">
+                <img src="image/Layer 3.svg" alt="flèche mois suivant" id="next-week6">
             </div> 
 
-            <div class="day" id="days-container"></div>
+            <div class="day" id="days-container6"></div>
 
             <div class="disponibilite">
                 <img src="image/LÉGENDE.svg" alt="disponibilité">

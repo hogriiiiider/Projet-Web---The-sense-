@@ -72,13 +72,13 @@
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
+                    <a href="../accueil/index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
-                        <a href="../news/news.html">NEWS</a>
-                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
-                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../news/news.php">NEWS</a>
+                        <a href="../lightroom/light_room.php">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.php">À PROPOS DE NOUS</a>
                         <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
                     <div class="CONNECT" >
@@ -124,9 +124,9 @@
         </div>
 
         <div class="logo_room">
-            <span><a href="../lightroom/light_room.html"><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_Light_Room"></a></span>
-            <span><a href="../darkroom/dark_room.html"><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></a></span>
-            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="image/LITTLE-CREATIVE.svg" alt="Logo_Creative_Room"></a>
+            <span><a href="../lightroom/light_room.php"><img class="dark_room" src="image/LITTLE-LIGHT-ROOM (2).svg" alt="Logo_Light_Room"></a></span>
+            <span><a href="../darkroom/dark_room.php"><img class="battle_room" src="image/LITTLE-DARK-ROOM.svg" alt="Logo_Dark_Room"></a></span>
+            <a href="../creativeroom/creative_room.php"><img class="creative_room" src="image/LITTLE-CREATIVE.svg" alt="Logo_Creative_Room"></a>
         </div>
         
         <img class="light_room" src="../../../Assets/Images/Icones/BATTLE ROOM (1).svg" alt="Logo_Light_Room">
@@ -267,7 +267,7 @@
                             <p id="selected-date"></p>
                             <p id="selected-time"></p>
                             <div class="form-column">
-                                <input type="text2" placeholder="Votre nom">
+                                <input type="text2" placeholder="Votre nom" id="nom">
                                 <input type="email" placeholder="Votre adresse mail">
                                 <div class="option-player">
                                     <!-- Sélection du nombre de joueurs -->
@@ -286,7 +286,7 @@
                                 </div>
                             </div>
                             <div class="form-column">
-                                <input type="text" placeholder="Votre prénom">
+                                <input type="text" placeholder="Votre prénom" id="prénom">
                                 <input type="tel" placeholder="Votre n° de téléphone">
                                 <!-- Sélection de la manière dont l'utilisateur a découvert The Sense -->
                                 <select type="option-sense" id="the-sense">
@@ -347,8 +347,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="reservation-reserver-btn">
-                    <img src="../../../Assets/Images/Bouton/Bouton réserver.svg">
+                    <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="getValue();">
                 </div>
                 <div class="annuler">
                     <a href="Pages\PHP\accueil\index.php">ANNULER</a>
@@ -356,6 +357,51 @@
                 <div class="useful-information">
                     <img src="../../../Assets/Images/Picture/INFORMATIONS IMPORTANTES.svg" alt="INFORMATIONS IMPORTANTES">
                 </div>
+            </div>
+        </div>
+
+
+        <div class="description-experience">
+            <div>
+                <div class="bg_achat">
+                    <h2 class="phrase_de_validation">
+                        C'EST PRÊT! <br>
+                        <span class="color_info"> RÉCAPITULATIF DE VOTRE ACHAT</span>
+                    </h2>
+                    <img src="../../../Assets/Images/Design/Line 22.svg" alt="Un trait">
+                    <div class="recap-achat">
+                        <img src="../../../Assets/Images/Picture/creat-recap.svg" alt="logo de la room">
+                        
+                    </div>
+                        <div><span id="jour-display"></span></div>
+                        <div><span class="color_info" id="heure-display"></span></div>
+                        <div class="nompré">
+                            <div><span id="prénom-display"></span></div>
+                            <div><span id="nom-display"></span></div>
+                        </div>
+                        <div><span class="color_info" id="nombre-display"></span></div>
+                        <div> Prix total :<span id="price-display"></span></div>
+                        
+                    <p>
+                        En cas d’annulation, merci de nous contacter : <br>
+                        - Par téléphone : <span class="color_info"> 01 23 45 67 89 </span> <br>
+                        - Par mail : <span class="color_info"> gpasdidée@projet7.com </span> <br>
+                    </p>
+                    <p class="A48-HEURE">
+                        *Seules les annulations jusqu'à 48h à l'avance seront remboursées
+                    </p>
+                    <p class="remerciement">
+                        Toute l’équipe de The Sense vous remercie pour votre réservation,
+                        nous avons hâte de vous (re)voir ! 
+                    </p>
+                </div>
+    
+                <div>
+                    <div class="bg_reservation_2">
+                        
+                        <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo.svg" alt="logo the sense">
+                    </div>
+                </div>      
             </div>
         </div>
 

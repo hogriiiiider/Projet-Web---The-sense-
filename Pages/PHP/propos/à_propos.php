@@ -69,13 +69,13 @@
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
+                    <a href="../accueil/index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
-                        <a href="../news/news.html">NEWS</a>
-                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
-                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../news/news.php">NEWS</a>
+                        <a href="../lightroom/light_room.php">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.php">À PROPOS DE NOUS</a>
                         <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
                     <div class="CONNECT" >

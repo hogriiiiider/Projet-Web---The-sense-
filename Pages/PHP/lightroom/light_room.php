@@ -71,13 +71,13 @@ if(isset($_POST['logout'])){
         <div class="nav-container">
             <div class="nav">
                 <div class="nav-image">
-                    <a href="Projet-Web---The-sense-\Pages\PHP\accueil\index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
+                    <a href="../accueil/index.php"><img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo_the_sense.svg" alt="logo the sense" /><a>
                 </div>
                 <div class="nava">
                     <div class="nav-droite">
-                        <a href="../news/news.html">NEWS</a>
-                        <a href="../lightroom/light_room.html">NOS EXPÉRIENCES</a>
-                        <a href="../propos/à_propos.html">À PROPOS DE NOUS</a>
+                        <a href="../news/news.php">NEWS</a>
+                        <a href="../lightroom/light_room.php">NOS EXPÉRIENCES</a>
+                        <a href="../propos/à_propos.php">À PROPOS DE NOUS</a>
                         <a href="../equipement/equipement.html">NOS ÉQUIPEMENTS</a>
                     </div>
                     <div class="CONNECT" >
@@ -123,9 +123,9 @@ if(isset($_POST['logout'])){
         </div>
 
         <div class="logo_room">
-            <span><a href="../darkroom/dark_room.html"><img class="dark_room" src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="Logo_Dark_Room"></a></span>
-            <span><a href="../battleroom/battle_room.html"><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM LOGO LIGHT.svg" alt="Logo_Battle_Room"></a></span>
-            <a href="../creativeroom/creative_room.html"><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE LOGO LIGHT.svg" alt="Logo_Creative_Room"></a>
+            <span><a href="../darkroom/dark_room.php"><img class="dark_room" src="../../../Assets/Images/Icones/DARK ROOM.svg" alt="Logo_Dark_Room"></a></span>
+            <span><a href="../battleroom/battle_room.php"><img class="battle_room" src="../../../Assets/Images/Icones/BATTLE ROOM LOGO LIGHT.svg" alt="Logo_Battle_Room"></a></span>
+            <a href="../creativeroom/creative_room.php"><img class="creative_room" src="../../../Assets/Images/Icones/CREATIVE LOGO LIGHT.svg" alt="Logo_Creative_Room"></a>
         </div>
         
         <img class="light_room" src="../../../Assets/Images/Icones/LIGHT ROOM.svg" alt="Logo_Light_Room">
@@ -363,6 +363,187 @@ if(isset($_POST['logout'])){
             </div>
         </div>
 
+
+        <div class="reservation">
+            <div class="retour">
+                <p onclick="close_reserv()">RETOUR</p>
+            </div>
+
+            <div class="image-reserv">
+                <img src="../../../Assets/Images/Picture/img-battleroom-reserv.jpg" alt="IMAGE RESERVATION">
+            </div>
+
+            <div class="planning-reservation">
+                <div class="reservation-header">
+                    <h1>VOTRE RÉSERVATION EST PRÊTE !</h1>
+                    <h2>IL NE RESTE PLUS QU'À VALIDER !</h2>
+                </div> 
+                <div class="planning">
+                    <div class="first-part">
+                        <!-- Sélection de la semaine -->
+                        <div class="planning-date" id="week-range">
+                            <img src="../../../Assets/Images/Icones/Layer 2.svg" alt="flèche mois précedent" id="prev-week">
+                            <p>
+                                DU <span id="start-day">15</span> AU <span id="end-day">20</span> <span id="end-month">DÉCEMBRE</span>
+                            </p>
+                            <img src="../../../Assets/Images/Icones/Layer 3.svg" alt="flèche mois suivant" id="next-week">
+                        </div>
+                    
+                        <!-- Conteneur pour les jours -->
+                        <div class="day" id="days-container">
+                        </div>
+                    
+                        <!-- Légende pour la disponibilité -->
+                        <div class="disponibilite">
+                            <img src="../../../Assets/Images/Icones/LÉGENDE.svg" alt="disponibilité">
+                        </div>
+                    </div>
+                
+                    <div class="seconde-part">
+                    
+                        <!-- Formulaire de confirmation -->
+                        <div class="confirmation-container">
+                            <p id="selected-date"></p>
+                            <p id="selected-time"></p>
+                            <div class="form-column">
+                                <input type="text2" placeholder="Votre nom" id="nom">
+                                <input type="email" placeholder="Votre adresse mail">
+                                <div class="option-player">
+                                    <!-- Sélection du nombre de joueurs -->
+                                    <select id="player-count" name="Nombre de joueurs"> 
+                                        <option value="" selected disabled hidden>Nbre de joueurs</option>
+                                        <!-- Options pour le nombre de joueurs -->
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-column">
+                                <input type="text" placeholder="Votre prénom" id="prénom">
+                                <input type="tel" placeholder="Votre n° de téléphone">
+                                <!-- Sélection de la manière dont l'utilisateur a découvert The Sense -->
+                                <select type="option-sense" id="the-sense">
+                                    <option class="false-value" value="" selected disabled hidden>J'ai découvert The Sense</option>
+                                    <!-- Options pour la découverte de The Sense -->
+                                    <option value="">Par des amis</option>
+                                    <option value="">Recherche internet</option>
+                                    <option value="">Publicité</option>
+                                    <option value="">Par de la famille</option>
+                                    <option value="">Je ne sais plus</option>
+                                </select>
+                            </div>
+                            <!-- Champ pour le code promo ou bon cadeau -->
+                            <input type="promo" placeholder="Code promo ou bon cadeau">
+                            <button>Appliquer</button>
+                            <p>TOTAL: <span id="total-price">...</span> €</p>
+                            <!-- Options de paiement -->
+                            <div class="payment-cargo">
+                                <p>SÉLECTIONNEZ VOTRE MOYEN DE PAIEMENT</p>
+                                <div class="payment-container">
+                                    <div class="payment-options">
+                                        <h3>Paiement groupé (en ligne)</h3>
+                                        <div class="payment-logo">
+                                            <!-- Options de paiement groupé -->
+                                            <div class="payment-online">
+                                                <div class="payment-option">
+                                                    <label> <img src="../../../Assets/Images/Icones/visa.svg" alt="Visa"><img src="../../../Assets/Images/Icones/mastercard.svg" alt="mastercard"> <img src="../../../Assets/Images/Icones/CB.svg" alt="CB">
+                                                    </label>
+                                                </div>
+                                                <div class="cards">
+                                                    <input type="radio" name="payment" value="grouped">
+                                                </div>
+                                                <div class="paypal">
+                                                    <img src="../../../Assets/Images/Icones/paypal.svg" alt="Paypal"><input type="radio" name="payment" value="grouped">
+                                                </div>
+                                            </div>
+                                            <div class="payment-option2">
+                                                <p>*En continuant, vous serez redirigé vers une page de paiement sécurisée.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Séparateur entre les options de paiement -->
+                                        <div class="payment-separator"></div>
+                                    <div>
+                                        <!-- Paiement individuel sur place -->
+                                        <div class="payment-option-3">
+                                            <h3>Paiement individuel (sur place)</h3>
+                                            <input type="radio" name="payment" value="individual">
+                                            <p>**Vous recevrez par mail la facturation de votre réservation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="conditions">
+                                    <label><input type="checkbox"> J'accepte les conditions générales de vente</label>
+                                    <label><input type="checkbox"> Je souhaite offrir cette expérience à un proche</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-reserver-btn">
+                    <img src="../../../Assets/Images/Bouton/Bouton réserver.svg" onclick="getValue();">
+                </div>
+                <div class="annuler">
+                    <a href="Pages\PHP\accueil\index.php">ANNULER</a>
+                </div>
+                <div class="useful-information">
+                    <img src="../../../Assets/Images/Picture/INFORMATIONS IMPORTANTES.svg" alt="INFORMATIONS IMPORTANTES">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="description-experience">
+            <div>
+                <div class="bg_achat">
+                    <h2 class="phrase_de_validation">
+                        C'EST PRÊT! <br>
+                        <span class="color_info"> RÉCAPITULATIF DE VOTRE ACHAT</span>
+                    </h2>
+                    <img src="../../../Assets/Images/Design/Line 22.svg" alt="Un trait">
+                    <div class="recap-achat">
+                        <img src="../../../Assets/Images/Picture/creat-recap.svg" alt="logo de la room">
+                        
+                    </div>
+                        <div><span id="jour-display"></span></div>
+                        <div><span class="color_info" id="heure-display"></span></div>
+                        <div class="nompré">
+                            <div><span id="prénom-display"></span></div>
+                            <div><span id="nom-display"></span></div>
+                        </div>
+                        <div><span class="color_info" id="nombre-display"></span></div>
+                        <div> Prix total :<span id="price-display"></span></div>
+                        
+                    <p>
+                        En cas d’annulation, merci de nous contacter : <br>
+                        - Par téléphone : <span class="color_info"> 01 23 45 67 89 </span> <br>
+                        - Par mail : <span class="color_info"> gpasdidée@projet7.com </span> <br>
+                    </p>
+                    <p class="A48-HEURE">
+                        *Seules les annulations jusqu'à 48h à l'avance seront remboursées
+                    </p>
+                    <p class="remerciement">
+                        Toute l’équipe de The Sense vous remercie pour votre réservation,
+                        nous avons hâte de vous (re)voir ! 
+                    </p>
+                </div>
+    
+                <div>
+                    <div class="bg_reservation_2">
+                        
+                        <img class="logo_the_sense" src="../../../Assets/Images/Icones/Logo.svg" alt="logo the sense">
+                    </div>
+                </div>      
+            </div>
+        </div>
+        
     </body>
     <footer>
         <div class="left">

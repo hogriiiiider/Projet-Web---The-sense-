@@ -205,6 +205,105 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // PLANNING
+document.addEventListener('DOMContentLoaded', function () {
+    const daysContainer = document.getElementById('days-container6');
+    const weekRange = document.getElementById('week-range6');
+    const startDaySpan = document.getElementById('start-day6');
+    const endDaySpan = document.getElementById('end-day6');
+    const endMonthSpan = document.getElementById('end-month6');
+    const prevWeekBtn = document.getElementById('prev-week6');
+    const nextWeekBtn = document.getElementById('next-week6');
+    const numberOfColumns = 6;
+
+    let currentWeek = 0;
+
+    function updateWeek() {
+
+        const today = new Date();
+        today.setDate(today.getDate() + currentWeek * 7);
+        let startDay = new Date(today);
+    
+
+        while (startDay.getDay() !== 2) {
+            startDay.setDate(startDay.getDate() + 1);
+        }
+    
+
+        let endDay = new Date(startDay);
+        endDay.setDate(startDay.getDate() + numberOfColumns - 1);
+    
+
+        startDaySpan.textContent = startDay.getDate();
+        endDaySpan.textContent = endDay.getDate();
+        endMonthSpan.textContent = endDay.toLocaleDateString('fr-FR', { month: 'short' });
+    
+        for (let i = 0; i < numberOfColumns; i++) {
+            const nextDay = new Date(startDay);
+            nextDay.setDate(startDay.getDate() + i);
+    
+            const dayElement = document.createElement('div');
+            dayElement.classList.add('column');
+    
+            const dayDate = document.createElement('a');
+            dayDate.classList.add('date');
+    
+            if (i === 0) {
+                dayElement.classList.add('aujourdhui');
+                dayDate.textContent = startDay.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'short' });
+            } else {
+                dayDate.textContent = nextDay.toLocaleDateString('fr-FR', { weekday: 'long' }) + ' ' + nextDay.getDate() + ' ' + nextDay.toLocaleDateString('fr-FR', { month: 'short' });
+            }
+    
+            dayElement.appendChild(dayDate);
+    
+            const timeSlots = ['10h20', '11h50', '13h20', '14h50', '16h20', '17h50', '19h20', '20h50'];
+    
+
+            if (nextDay.getDay() === 5 || nextDay.getDay() === 6) {
+                timeSlots.push('22h20', '23h50');
+            } else {
+
+                timeSlots.push('-', '-');
+            }
+    
+            for (const timeSlotText of timeSlots) {
+                const timeSlot = document.createElement('p');
+                timeSlot.textContent = timeSlotText;
+                dayElement.appendChild(timeSlot);
+            }
+    
+            daysContainer.appendChild(dayElement);
+    
+            if (i < numberOfColumns - 1) {
+                const separator = document.createElement('div');
+                separator.classList.add('separator');
+                daysContainer.appendChild(separator);
+            }
+        }
+    }
+    
+    function clearColumns() {
+
+        daysContainer.innerHTML = '';
+    }
+
+
+    prevWeekBtn.addEventListener('click', function () {
+        currentWeek--;
+        clearColumns();
+        updateWeek();
+    });
+
+    nextWeekBtn.addEventListener('click', function () {
+        currentWeek++;
+        clearColumns();
+        updateWeek();
+    });
+
+
+    updateWeek();
+});
+// PLANNING
 
 document.getElementById('player-count').addEventListener('change', function() {
     const playerCount = parseInt(this.value);
@@ -541,3 +640,4 @@ document.querySelectorAll('.faq-item .question').forEach(question => {
     });
 });
 //FAQ
+

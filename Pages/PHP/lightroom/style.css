@@ -1056,7 +1056,101 @@ input[type="radio"] {
 
 /* PLANNING JS */
 
+.recap-achat {
+    color: white; 
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+.bg_achat{
+    display: block;
+    text-align: center;
+    background: url("../../../Assets/Images/Picture/creat-darkroom-recap.png");
+    background-size: cover;
+    background-repeat:no-repeat ;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 5%;
+    padding-bottom: 4%;
+    margin-top: 5%;
+}
 
+.phrase_de_validation{
+    font-family: Abel;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-right: 25%;
+    z-index: 1000;
+    color: white;
+}
+
+.color_info{
+    color: #db0000;
+}
+
+.bg_reservation_2 {
+    padding: 4%;
+    margin-bottom: 10%;
+    font-family: Abel;
+    font-size: 25px;
+    background-color: #131412;
+    color: white;
+    text-align: center;
+    margin-left: 5%;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.recap-achat{
+    margin-top: 1%;
+}
+
+.A48-HEURE{
+    font-family: Abel;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.remerciement{
+    font-family: Abel;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+
+#jour-display {
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+#heure-display {
+    font-size: 18px; 
+    margin-bottom: 20px;
+}
+
+#prénom-display, #nom-display {
+    display: inline-block; 
+    font-size: 30px; 
+    margin-right: 10px; 
+}
+
+#nombre-display {
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+
+#price-display {
+    font-size: 24px; 
+    margin-top: 20px; 
+}
 
 
 
